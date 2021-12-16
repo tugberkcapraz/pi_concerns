@@ -51,7 +51,7 @@ nav .nav-link.active {
 		<div class="col-sm-4">Model class:</div><div class="col-sm-2"><span style="background-color: #f6f8fa; font-family: monospace;">Model</span></div>
 		</div>
 		<div class="row">
-		<div class="col-sm-4">Number of samples:</div><div class="col-sm-2">2156</div>
+		<div class="col-sm-4">Number of samples:</div><div class="col-sm-2">2219</div>
 		</div>
 		<div class="row">
 		<div class="col-sm-4">Objective function:</div><div class="col-sm-2">MLW</div>
@@ -78,8 +78,22 @@ nav .nav-link.active {
     ## PI concerns
     pi_concerns_l =~ pi_misuse + pi_track + pi_safety + pi_share + pi_stranger
 
-    # REGRESSION MODEL
+    # REGRESSION MODELS
+    
+    ## Income as function of 
+    income ~ gender + age
+
+    ## Personality as function of demographics
+    openness_l  ~ age + income + gender
+    extraversion_l ~ age + income + gender
+    conscientiousness_l ~ age + income + gender
+    neuroticism_l ~ age + income + gender
+    agreeableness_l ~ age + income + gender
+    
+    ## Trust in institutions as function of personality traits and demographics
     trust_in_inst_l ~ openness_l + extraversion_l + conscientiousness_l + neuroticism_l + agreeableness_l + gender + age + income
+    
+    ### PI concerns  as function of Trust in institutions, personality traits and demographics
     pi_concerns_l ~ openness_l + extraversion_l + conscientiousness_l + neuroticism_l + agreeableness_l + trust_in_inst_l + gender + age + income
 </pre>
 		</div>
@@ -93,7 +107,7 @@ nav .nav-link.active {
 	    </h2>
 	    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion1">
 	      <div class="accordion-body">
-		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">pi_safety, trst_leg, cons_d, pi_share, pi_misuse, agrb_b, neur_b, trst_prl, extraversion_l, age, agrb_c, agrb_a, pi_stranger, cons_c, extr_b, pi_concerns_l, open_d, openness_l, trst_gov, extr_d, gender, extr_c, neur_c, pi_track, extr_a, income, cons_a, agreeableness_l, trst_pol, trust_in_inst_l, open_a, open_c, neuroticism_l, trst_plc, neur_a, conscientiousness_l, cons_b, open_b, agrb_d, trst_prt, neur_d</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">pi_safety, trst_leg, cons_d, pi_share, pi_misuse, agrb_b, neur_b, trst_prl, agrb_c, agrb_a, pi_stranger, cons_c, extr_b, pi_concerns_l, open_d, trst_gov, extr_d, extr_c, neur_c, pi_track, extr_a, cons_a, trst_pol, trust_in_inst_l, open_a, open_c, trst_plc, neur_a, cons_b, open_b, agrb_d, trst_prt, neur_d</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">neuroticism_l, income, agreeableness_l, openness_l, conscientiousness_l, gender, extraversion_l, age</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">agrb_a, agrb_b, agrb_c, agrb_d, cons_a, cons_b, cons_c, cons_d, extr_a, extr_b, extr_c, extr_d, neur_a, neur_b, neur_c, neur_d, open_a, open_b, open_c, open_d, pi_misuse, pi_safety, pi_share, pi_stranger, pi_track, trst_gov, trst_leg, trst_plc, trst_pol, trst_prl, trst_prt, age, gender, income</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">neuroticism_l, agreeableness_l, pi_concerns_l, openness_l, trust_in_inst_l, conscientiousness_l, extraversion_l</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">pi_track, extr_a, pi_safety, cons_a, trst_leg, cons_d, extr_c, trst_pol, open_a, pi_share, pi_misuse, agrb_b, neur_b, trst_prl, open_c, agrb_c, agrb_a, trst_plc, pi_stranger, cons_c, neur_a, extr_b, open_d, trst_gov, cons_b, open_b, agrb_d, trst_prt, extr_d, neur_d, neur_c</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">pi_safety, trst_leg, cons_d, pi_share, pi_misuse, agrb_b, neur_b, trst_prl, agrb_c, agrb_a, pi_stranger, cons_c, extr_b, open_d, trst_gov, extr_d, extr_c, neur_c, pi_track, extr_a, cons_a, trst_pol, open_a, open_c, trst_plc, neur_a, cons_b, open_b, agrb_d, trst_prt, neur_d</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">agreeableness_l, conscientiousness_l, extraversion_l, neuroticism_l, openness_l, pi_concerns_l, trust_in_inst_l, age, gender, income</div></div>
+		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">neur_b, neur_c, income, pi_stranger, agrb_a, trst_gov, trst_prt, trst_pol, openness_l, open_c, pi_share, cons_a, agrb_c, extr_d, agrb_d, cons_d, conscientiousness_l, trust_in_inst_l, pi_track, extr_a, agrb_b, pi_safety, open_b, trst_leg, trst_plc, pi_misuse, extraversion_l, neur_d, agreeableness_l, pi_concerns_l, age, trst_prl, cons_b, extr_c, open_d, gender, open_a, extr_b, neur_a, cons_c, neuroticism_l</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">neur_b, neur_c, income, pi_stranger, agrb_a, trst_gov, trst_prt, trst_pol, openness_l, open_c, pi_share, cons_a, agrb_c, extr_d, agrb_d, cons_d, conscientiousness_l, trust_in_inst_l, pi_track, extr_a, agrb_b, pi_safety, open_b, trst_leg, trst_plc, pi_misuse, extraversion_l, neur_d, agreeableness_l, pi_concerns_l, trst_prl, cons_b, extr_c, open_d, open_a, extr_b, neur_a, cons_c, neuroticism_l</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">age, gender</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">agrb_a, agrb_b, agrb_c, agrb_d, cons_a, cons_b, cons_c, cons_d, extr_a, extr_b, extr_c, extr_d, neur_a, neur_b, neur_c, neur_d, open_a, open_b, open_c, open_d, pi_misuse, pi_safety, pi_share, pi_stranger, pi_track, trst_gov, trst_leg, trst_plc, trst_pol, trst_prl, trst_prt, age, gender, income</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">extraversion_l, agreeableness_l, trust_in_inst_l, pi_concerns_l, conscientiousness_l, openness_l, neuroticism_l</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">neur_b, neur_c, extr_a, agrb_b, pi_track, pi_safety, pi_stranger, extr_b, open_b, agrb_a, trst_leg, trst_plc, trst_gov, pi_misuse, trst_prt, trst_pol, neur_d, open_c, pi_share, cons_a, cons_b, agrb_c, extr_c, trst_prl, open_d, open_a, extr_d, agrb_d, cons_d, neur_a, cons_c</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">neur_b, neur_c, pi_stranger, agrb_a, trst_gov, trst_prt, trst_pol, open_c, pi_share, cons_a, agrb_c, extr_d, agrb_d, cons_d, pi_track, extr_a, agrb_b, pi_safety, open_b, trst_leg, trst_plc, pi_misuse, neur_d, trst_prl, cons_b, extr_c, open_d, open_a, extr_b, neur_a, cons_c</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">agreeableness_l, conscientiousness_l, extraversion_l, neuroticism_l, openness_l, pi_concerns_l, trust_in_inst_l, age, gender, income</div></div>
 	      </div>
 	    </div>
 	  </div>
@@ -123,7 +137,7 @@ nav .nav-link.active {
 	<a class="anchor" id="estimates"></a>
 	<h3>Estimates</h3>
 	<div style="font-family:monospace">
-	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>openness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>-1.358</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>-1.609</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>-1.279</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>extraversion_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.350</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>-1.107</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>-1.038</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.219</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>-2.009</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>-1.749</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.059</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>-0.788</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>-0.818</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.954</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>-1.076</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>-1.027</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.905</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.847</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>0.925</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>0.725</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>0.922</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>0.805</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.949</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.988</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.983</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.533</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.883</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>-0.579</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>-0.179</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.356</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>-0.052</div><div class='col-sm-1'>0.440</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.001</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.361</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.084</div><div class='col-sm-1'>0.256</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.019</div><div class='col-sm-1'>0.699</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>-0.019</div><div class='col-sm-1'>0.797</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>0.051</div><div class='col-sm-1'>0.184</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.228</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>-0.167</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.076</div><div class='col-sm-1'>0.195</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.011</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.002</div><div class='col-sm-1'>0.927</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_concerns_l</div><div class='col-sm-1'>1.677</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>2.162</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>1.222</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.801</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>0.437</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.375</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.737</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.649</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>1.367</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>1.570</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.570</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>0.561</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.997</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.103</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>0.553</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>1.503</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>0.938</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.701</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>1.024</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.455</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>1.966</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>1.056</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>1.409</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>1.911</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>1.373</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>1.545</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.426</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.663</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.419</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.875</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>1.273</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>1.904</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.370</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.650</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>1.765</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>1.439</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.562</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>1.869</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2'>Covariances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>-0.191</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.211</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>-0.269</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>-0.231</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>0.293</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.214</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.306</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>openness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.085</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.182</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.038</div><div class='col-sm-1'>0.017</div></div>
+	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>openness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>-1.698</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>-2.043</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>-1.300</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>extraversion_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.309</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>-1.045</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>-1.011</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.282</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>-2.117</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>-1.772</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.038</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>-0.858</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>-0.900</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.886</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>-0.848</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>-0.802</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.905</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.846</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>0.927</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>0.723</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>0.926</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>0.800</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.949</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.986</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.982</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>income ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>-0.136</div><div class='col-sm-1'>0.005</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>-0.000</div><div class='col-sm-1'>0.877</div></div><div class="row"><div class='col-sm-2 text-end'>openness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.001</div><div class='col-sm-1'>0.609</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.019</div><div class='col-sm-1'>0.140</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>-0.000</div><div class='col-sm-1'>0.995</div></div><div class="row"><div class='col-sm-2 text-end'>extraversion_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.004</div><div class='col-sm-1'>0.005</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.150</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.074</div><div class='col-sm-1'>0.093</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.057</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.123</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>-0.020</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.187</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.227</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.012</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.006</div><div class='col-sm-1'>0.786</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.545</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.432</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.038</div><div class='col-sm-1'>0.403</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>-0.502</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>-0.140</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.176</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>-0.039</div><div class='col-sm-1'>0.585</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.002</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.356</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.058</div><div class='col-sm-1'>0.346</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.030</div><div class='col-sm-1'>0.453</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.006</div><div class='col-sm-1'>0.919</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>0.058</div><div class='col-sm-1'>0.086</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.181</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>-0.167</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.037</div><div class='col-sm-1'>0.550</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.011</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.006</div><div class='col-sm-1'>0.819</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>1.319</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>0.324</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.333</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>2.214</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.745</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.929</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_concerns_l</div><div class='col-sm-1'>1.672</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>1.016</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.221</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>1.293</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>0.724</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>1.042</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.568</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.418</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>1.078</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.564</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>1.685</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>1.425</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>1.622</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>1.623</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>1.544</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.397</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.922</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.638</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>1.659</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>1.346</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>1.908</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>0.556</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>1.760</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>0.543</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.646</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>1.957</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>2.138</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.972</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.470</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.463</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>0.966</div><div class='col-sm-1'>0.000</div></div>
 	</div>
 	<br>
 	<div class="accordion" id="accordion3">
@@ -135,33 +149,20 @@ nav .nav-link.active {
 	    </h2>	
 	    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion3">
 	      <div class="accordion-body" style="background-color: #f6f8fa;max-width: 100%;width: 100%">
-		<pre style="font-family: monospace">               lval  op                 rval  Estimate  Std. Err    z-value  \
-0   trust_in_inst_l   ~           openness_l -0.533005  0.088514  -6.021705   
-1   trust_in_inst_l   ~       extraversion_l  0.008376  0.056993   0.146974   
-2   trust_in_inst_l   ~  conscientiousness_l -0.578901  0.090187  -6.418911   
-3   trust_in_inst_l   ~        neuroticism_l -0.178538  0.044376  -4.023275   
-4   trust_in_inst_l   ~      agreeableness_l  0.355581  0.068068   5.223896   
-..              ...  ..                  ...       ...       ...        ...   
-91           cons_b  ~~               cons_b  1.649527  0.056814  29.033919   
-92           open_b  ~~               open_b  1.764826  0.068101  25.914769   
-93           agrb_d  ~~               agrb_d  1.439391  0.053783  26.763072   
-94         trst_prt  ~~             trst_prt  0.562066  0.021215   26.49362   
-95           neur_d  ~~               neur_d  1.868747  0.065801  28.399872   
+		<pre style="font-family: monospace">           lval  op    rval  Estimate  Std. Err    z-value   p-value
+0        income   ~  gender -0.136061  0.048974  -2.778214  0.005466
+1        income   ~     age -0.000271  0.001755  -0.154469   0.87724
+2    openness_l   ~     age  0.000535  0.001047   0.510987   0.60936
+3    openness_l   ~  income  0.018777  0.012719   1.476253  0.139876
+4    openness_l   ~  gender -0.000165  0.029261  -0.005645  0.995496
+..          ...  ..     ...       ...       ...        ...       ...
+99       open_d  ~~  open_d  2.137878   0.07332  29.158064       0.0
+100      open_a  ~~  open_a  1.971791   0.06414  30.742188       0.0
+101      extr_b  ~~  extr_b  1.470170  0.071379  20.596576       0.0
+102      neur_a  ~~  neur_a  1.462715  0.059595  24.544448       0.0
+103      cons_c  ~~  cons_c  0.965955  0.070657  13.671143       0.0
 
-     p-value  
-0        0.0  
-1   0.883153  
-2        0.0  
-3   0.000057  
-4        0.0  
-..       ...  
-91       0.0  
-92       0.0  
-93       0.0  
-94       0.0  
-95       0.0  
-
-[96 rows x 7 columns]</pre>
+[104 rows x 7 columns]</pre>
 	      </div>
 	    </div>
 	  </div>
@@ -180,16 +181,16 @@ nav .nav-link.active {
 Optimization method: SLSQP
 Optimization successful.
 Optimization terminated successfully
-Objective value: 2.398
-Number of iterations: 54
-Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.788 -0.818 0.954 -1.076 -1.027 0.905 0.847 0.925 0.725 0.922 0.805 0.949 0.988 0.983 -0.533 0.008 -0.579 -0.179 0.356 -0.052 0.008 0.361 -0.084 0.019 -0.019 0.051 0.228 -0.167 0.076 0.011 -0.002 0.649 1.367 1.570 0.570 0.561 0.997 1.103 0.553 1.503 0.938 0.701 1.024 1.455 1.677 1.966 1.056 1.409 1.911 1.373 1.545 1.426 1.663 0.419 2.162 1.875 1.273 1.904 1.370 1.650 1.765 1.439 0.562 1.869 1.222 -0.191 -0.211 -0.269 -0.231 0.801 0.293 0.214 0.306 0.437 0.085 0.182 0.375 0.038 0.737</pre>
+Objective value: 2.602
+Number of iterations: 66
+Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.858 -0.900 0.886 -0.848 -0.802 0.905 0.846 0.927 0.723 0.926 0.800 0.949 0.986 0.982 -0.136 -0.000 0.001 0.019 -0.000 0.004 0.150 0.074 0.008 0.057 0.123 -0.020 -0.187 0.227 0.012 -0.006 0.545 -0.432 0.038 -0.502 -0.140 0.176 -0.039 0.008 0.356 -0.058 0.030 0.006 0.058 0.181 -0.167 0.037 0.011 -0.006 1.221 1.293 1.319 0.696 0.724 1.042 0.568 0.418 0.324 1.078 0.564 1.696 1.685 1.425 1.622 1.623 0.333 2.214 1.544 1.397 0.922 0.638 1.659 1.346 1.908 0.556 0.745 1.760 0.929 1.672 0.543 1.646 1.957 2.138 1.972 1.470 1.463 0.966 1.016</pre>
 	      </div>
 	    </div>
 	  </div>
 	</div>
 	<a class="anchor" id="indices"></a>
 	<h3>Fit indices</h3>
-	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>506.000</td><td>564.000</td><td>5170.782</td><td>0.000</td><td>30923.532</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>0.846</td><td>0.833</td><td>0.814</td><td>0.833</td><td>0.829</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>0.065</td><td>173.203</td><td>678.368</td><td>2.398</td></tr></tbody></table>
+	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>498.000</td><td>563.000</td><td>5774.197</td><td>0.000</td><td>32004.723</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>0.832</td><td>0.820</td><td>0.796</td><td>0.820</td><td>0.810</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>0.069</td><td>188.796</td><td>742.162</td><td>2.602</td></tr></tbody></table>
 	<a class="anchor" id="matrices"></a>
 	<h3>Matrices</h3>
  	<center><h4>Covariance matrix</h4></center>
@@ -240,38 +241,38 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
   <tbody>
     <tr>
       <th>agrb_a</th>
-      <td>1.74</td>
+      <td>1.75</td>
       <td>1.00</td>
       <td>-0.77</td>
       <td>-0.73</td>
       <td>0.39</td>
-      <td>0.35</td>
+      <td>0.34</td>
       <td>-0.32</td>
-      <td>-0.29</td>
+      <td>-0.28</td>
       <td>0.18</td>
       <td>0.43</td>
-      <td>-0.27</td>
-      <td>-0.04</td>
+      <td>-0.26</td>
       <td>-0.03</td>
-      <td>-0.11</td>
+      <td>-0.03</td>
+      <td>-0.10</td>
+      <td>0.27</td>
+      <td>0.09</td>
+      <td>0.48</td>
+      <td>-0.23</td>
+      <td>-0.20</td>
+      <td>-0.29</td>
+      <td>0.19</td>
+      <td>0.13</td>
+      <td>0.19</td>
+      <td>0.16</td>
+      <td>0.13</td>
+      <td>0.10</td>
+      <td>0.25</td>
       <td>0.28</td>
       <td>0.09</td>
-      <td>0.49</td>
-      <td>-0.23</td>
-      <td>-0.21</td>
-      <td>-0.30</td>
-      <td>0.19</td>
-      <td>0.12</td>
-      <td>0.18</td>
-      <td>0.16</td>
-      <td>0.12</td>
-      <td>0.11</td>
-      <td>0.28</td>
-      <td>0.30</td>
+      <td>0.14</td>
       <td>0.10</td>
-      <td>0.15</td>
-      <td>0.11</td>
-      <td>1.96</td>
+      <td>1.95</td>
       <td>0.13</td>
       <td>-0.06</td>
     </tr>
@@ -279,135 +280,135 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>agrb_b</th>
       <td>1.00</td>
       <td>1.73</td>
-      <td>-0.65</td>
-      <td>-0.58</td>
-      <td>0.40</td>
-      <td>0.32</td>
-      <td>-0.37</td>
-      <td>-0.27</td>
-      <td>0.38</td>
+      <td>-0.66</td>
+      <td>-0.59</td>
+      <td>0.41</td>
+      <td>0.30</td>
+      <td>-0.36</td>
+      <td>-0.25</td>
+      <td>0.39</td>
       <td>0.55</td>
       <td>-0.24</td>
-      <td>-0.19</td>
-      <td>-0.05</td>
-      <td>-0.08</td>
+      <td>-0.18</td>
+      <td>-0.04</td>
+      <td>-0.07</td>
       <td>0.22</td>
-      <td>0.10</td>
+      <td>0.11</td>
       <td>0.62</td>
-      <td>-0.29</td>
-      <td>-0.35</td>
+      <td>-0.28</td>
+      <td>-0.34</td>
       <td>-0.45</td>
-      <td>0.25</td>
+      <td>0.26</td>
       <td>0.14</td>
-      <td>0.21</td>
+      <td>0.22</td>
       <td>0.25</td>
       <td>0.20</td>
-      <td>-0.01</td>
-      <td>-0.01</td>
-      <td>0.08</td>
-      <td>-0.03</td>
-      <td>0.01</td>
       <td>-0.02</td>
-      <td>1.19</td>
+      <td>-0.01</td>
+      <td>0.07</td>
+      <td>-0.03</td>
+      <td>0.00</td>
+      <td>-0.02</td>
+      <td>1.18</td>
       <td>0.12</td>
       <td>-0.01</td>
     </tr>
     <tr>
       <th>agrb_c</th>
       <td>-0.77</td>
-      <td>-0.65</td>
-      <td>2.43</td>
+      <td>-0.66</td>
+      <td>2.42</td>
       <td>1.20</td>
-      <td>-0.22</td>
-      <td>-0.26</td>
-      <td>0.49</td>
+      <td>-0.23</td>
+      <td>-0.28</td>
+      <td>0.50</td>
       <td>0.40</td>
       <td>-0.12</td>
       <td>-0.37</td>
       <td>0.65</td>
-      <td>0.46</td>
-      <td>0.34</td>
+      <td>0.45</td>
+      <td>0.35</td>
       <td>0.38</td>
-      <td>-0.12</td>
+      <td>-0.11</td>
       <td>-0.03</td>
       <td>-0.23</td>
+      <td>0.58</td>
       <td>0.59</td>
-      <td>0.59</td>
-      <td>0.67</td>
-      <td>-0.14</td>
+      <td>0.68</td>
+      <td>-0.13</td>
       <td>-0.06</td>
-      <td>-0.14</td>
+      <td>-0.15</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>0.16</td>
+      <td>-0.04</td>
+      <td>-0.12</td>
+      <td>0.10</td>
+      <td>0.05</td>
+      <td>0.13</td>
+      <td>-2.46</td>
       <td>-0.11</td>
-      <td>-0.11</td>
-      <td>0.14</td>
-      <td>-0.06</td>
-      <td>-0.14</td>
-      <td>0.09</td>
-      <td>0.03</td>
-      <td>0.12</td>
-      <td>-2.40</td>
-      <td>-0.11</td>
-      <td>0.02</td>
+      <td>0.01</td>
     </tr>
     <tr>
       <th>agrb_d</th>
       <td>-0.73</td>
-      <td>-0.58</td>
+      <td>-0.59</td>
       <td>1.20</td>
       <td>2.28</td>
-      <td>-0.20</td>
-      <td>-0.32</td>
-      <td>0.46</td>
+      <td>-0.21</td>
+      <td>-0.33</td>
+      <td>0.47</td>
       <td>0.49</td>
       <td>-0.11</td>
       <td>-0.53</td>
       <td>0.80</td>
-      <td>0.48</td>
-      <td>0.38</td>
+      <td>0.47</td>
+      <td>0.39</td>
       <td>0.46</td>
       <td>-0.12</td>
-      <td>-0.07</td>
-      <td>-0.13</td>
-      <td>0.50</td>
-      <td>0.58</td>
-      <td>0.49</td>
-      <td>-0.18</td>
-      <td>-0.11</td>
-      <td>-0.17</td>
-      <td>-0.21</td>
+      <td>-0.08</td>
       <td>-0.12</td>
+      <td>0.49</td>
+      <td>0.57</td>
+      <td>0.49</td>
+      <td>-0.17</td>
+      <td>-0.10</td>
+      <td>-0.17</td>
+      <td>-0.20</td>
+      <td>-0.11</td>
       <td>-0.02</td>
-      <td>-0.22</td>
-      <td>-0.28</td>
+      <td>-0.21</td>
+      <td>-0.27</td>
       <td>-0.00</td>
-      <td>-0.07</td>
+      <td>-0.06</td>
       <td>0.01</td>
       <td>-2.16</td>
       <td>-0.10</td>
-      <td>-0.03</td>
+      <td>-0.05</td>
     </tr>
     <tr>
       <th>cons_a</th>
       <td>0.39</td>
-      <td>0.40</td>
-      <td>-0.22</td>
-      <td>-0.20</td>
-      <td>2.04</td>
+      <td>0.41</td>
+      <td>-0.23</td>
+      <td>-0.21</td>
+      <td>2.05</td>
       <td>0.50</td>
       <td>-0.68</td>
-      <td>-0.69</td>
-      <td>0.20</td>
+      <td>-0.68</td>
+      <td>0.22</td>
       <td>0.43</td>
       <td>-0.13</td>
-      <td>-0.22</td>
-      <td>-0.28</td>
-      <td>-0.40</td>
-      <td>0.38</td>
-      <td>0.41</td>
-      <td>0.20</td>
-      <td>0.05</td>
-      <td>-0.17</td>
       <td>-0.19</td>
+      <td>-0.27</td>
+      <td>-0.39</td>
+      <td>0.40</td>
+      <td>0.41</td>
+      <td>0.22</td>
+      <td>0.06</td>
+      <td>-0.17</td>
+      <td>-0.21</td>
       <td>0.06</td>
       <td>0.07</td>
       <td>0.09</td>
@@ -415,160 +416,160 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.12</td>
       <td>0.12</td>
       <td>0.06</td>
-      <td>0.10</td>
+      <td>0.09</td>
       <td>0.08</td>
-      <td>0.08</td>
-      <td>0.06</td>
-      <td>2.58</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>2.62</td>
       <td>0.05</td>
-      <td>0.17</td>
+      <td>0.16</td>
     </tr>
     <tr>
       <th>cons_b</th>
-      <td>0.35</td>
-      <td>0.32</td>
-      <td>-0.26</td>
-      <td>-0.32</td>
+      <td>0.34</td>
+      <td>0.30</td>
+      <td>-0.28</td>
+      <td>-0.33</td>
       <td>0.50</td>
-      <td>2.21</td>
-      <td>-0.95</td>
+      <td>2.22</td>
+      <td>-0.96</td>
       <td>-0.76</td>
-      <td>-0.21</td>
+      <td>-0.22</td>
       <td>0.01</td>
       <td>0.01</td>
-      <td>0.16</td>
-      <td>-0.11</td>
-      <td>-0.26</td>
-      <td>0.18</td>
-      <td>0.05</td>
-      <td>-0.02</td>
-      <td>0.02</td>
-      <td>-0.11</td>
-      <td>-0.08</td>
-      <td>0.15</td>
-      <td>0.10</td>
-      <td>0.15</td>
       <td>0.14</td>
-      <td>0.12</td>
-      <td>-0.05</td>
+      <td>-0.12</td>
+      <td>-0.28</td>
+      <td>0.19</td>
+      <td>0.06</td>
+      <td>-0.04</td>
+      <td>0.04</td>
+      <td>-0.10</td>
+      <td>-0.08</td>
+      <td>0.13</td>
       <td>0.09</td>
-      <td>0.23</td>
-      <td>-0.09</td>
+      <td>0.15</td>
+      <td>0.13</td>
+      <td>0.11</td>
+      <td>-0.04</td>
+      <td>0.09</td>
+      <td>0.22</td>
+      <td>-0.08</td>
       <td>0.02</td>
       <td>-0.04</td>
-      <td>1.35</td>
+      <td>1.38</td>
       <td>0.05</td>
       <td>0.10</td>
     </tr>
     <tr>
       <th>cons_c</th>
       <td>-0.32</td>
-      <td>-0.37</td>
-      <td>0.49</td>
-      <td>0.46</td>
+      <td>-0.36</td>
+      <td>0.50</td>
+      <td>0.47</td>
       <td>-0.68</td>
-      <td>-0.95</td>
+      <td>-0.96</td>
       <td>2.54</td>
-      <td>1.33</td>
-      <td>0.12</td>
-      <td>0.03</td>
-      <td>0.16</td>
-      <td>0.30</td>
+      <td>1.32</td>
+      <td>0.13</td>
+      <td>0.04</td>
+      <td>0.17</td>
+      <td>0.29</td>
       <td>0.61</td>
       <td>0.66</td>
       <td>-0.32</td>
       <td>-0.26</td>
       <td>0.05</td>
-      <td>0.04</td>
+      <td>0.03</td>
       <td>0.30</td>
-      <td>0.49</td>
+      <td>0.50</td>
       <td>-0.09</td>
       <td>-0.03</td>
-      <td>-0.09</td>
+      <td>-0.10</td>
       <td>-0.11</td>
       <td>-0.11</td>
       <td>0.28</td>
-      <td>0.31</td>
+      <td>0.32</td>
       <td>0.17</td>
       <td>0.33</td>
       <td>0.33</td>
-      <td>0.32</td>
-      <td>-2.98</td>
+      <td>0.33</td>
+      <td>-2.96</td>
       <td>-0.04</td>
-      <td>-0.12</td>
+      <td>-0.13</td>
     </tr>
     <tr>
       <th>cons_d</th>
-      <td>-0.29</td>
-      <td>-0.27</td>
+      <td>-0.28</td>
+      <td>-0.25</td>
       <td>0.40</td>
       <td>0.49</td>
-      <td>-0.69</td>
+      <td>-0.68</td>
       <td>-0.76</td>
-      <td>1.33</td>
+      <td>1.32</td>
       <td>2.72</td>
-      <td>0.19</td>
-      <td>-0.08</td>
-      <td>0.30</td>
-      <td>0.18</td>
+      <td>0.20</td>
+      <td>-0.07</td>
+      <td>0.31</td>
+      <td>0.17</td>
       <td>0.56</td>
-      <td>0.68</td>
+      <td>0.67</td>
       <td>-0.28</td>
-      <td>-0.21</td>
-      <td>0.09</td>
+      <td>-0.20</td>
+      <td>0.08</td>
       <td>0.17</td>
       <td>0.47</td>
-      <td>0.39</td>
+      <td>0.40</td>
       <td>-0.05</td>
-      <td>-0.06</td>
+      <td>-0.07</td>
       <td>-0.06</td>
       <td>-0.13</td>
       <td>-0.09</td>
-      <td>0.09</td>
-      <td>0.02</td>
-      <td>-0.05</td>
-      <td>0.13</td>
-      <td>0.06</td>
-      <td>0.16</td>
-      <td>-2.12</td>
-      <td>-0.05</td>
+      <td>0.10</td>
+      <td>0.03</td>
+      <td>-0.03</td>
+      <td>0.14</td>
+      <td>0.08</td>
+      <td>0.17</td>
+      <td>-2.14</td>
+      <td>-0.04</td>
       <td>-0.12</td>
     </tr>
     <tr>
       <th>extr_a</th>
       <td>0.18</td>
-      <td>0.38</td>
+      <td>0.39</td>
       <td>-0.12</td>
       <td>-0.11</td>
+      <td>0.22</td>
+      <td>-0.22</td>
+      <td>0.13</td>
       <td>0.20</td>
-      <td>-0.21</td>
-      <td>0.12</td>
-      <td>0.19</td>
-      <td>2.16</td>
+      <td>2.18</td>
       <td>1.15</td>
       <td>-0.62</td>
-      <td>-0.80</td>
+      <td>-0.79</td>
       <td>-0.13</td>
+      <td>0.04</td>
+      <td>0.14</td>
+      <td>0.35</td>
+      <td>0.49</td>
+      <td>-0.08</td>
+      <td>-0.12</td>
+      <td>-0.16</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.08</td>
+      <td>0.01</td>
       <td>0.03</td>
       <td>0.13</td>
-      <td>0.33</td>
-      <td>0.48</td>
-      <td>-0.07</td>
-      <td>-0.13</td>
-      <td>-0.16</td>
-      <td>0.02</td>
-      <td>-0.00</td>
-      <td>-0.07</td>
-      <td>0.02</td>
-      <td>0.03</td>
-      <td>0.14</td>
-      <td>-0.10</td>
+      <td>-0.09</td>
       <td>-0.17</td>
       <td>0.15</td>
       <td>0.10</td>
-      <td>0.08</td>
-      <td>-1.81</td>
-      <td>-0.02</td>
+      <td>0.09</td>
+      <td>-1.88</td>
+      <td>-0.03</td>
       <td>0.21</td>
     </tr>
     <tr>
@@ -579,276 +580,276 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>-0.53</td>
       <td>0.43</td>
       <td>0.01</td>
-      <td>0.03</td>
-      <td>-0.08</td>
+      <td>0.04</td>
+      <td>-0.07</td>
       <td>1.15</td>
-      <td>2.80</td>
+      <td>2.81</td>
       <td>-1.05</td>
       <td>-0.89</td>
-      <td>-0.24</td>
+      <td>-0.25</td>
       <td>-0.28</td>
-      <td>0.41</td>
-      <td>0.61</td>
+      <td>0.43</td>
+      <td>0.63</td>
       <td>0.39</td>
       <td>-0.20</td>
-      <td>-0.25</td>
+      <td>-0.24</td>
       <td>-0.17</td>
-      <td>0.12</td>
-      <td>0.19</td>
-      <td>0.17</td>
+      <td>0.11</td>
+      <td>0.18</td>
       <td>0.16</td>
-      <td>0.20</td>
-      <td>0.25</td>
-      <td>0.26</td>
-      <td>0.29</td>
-      <td>0.26</td>
-      <td>0.33</td>
-      <td>0.22</td>
-      <td>2.31</td>
+      <td>0.14</td>
+      <td>0.19</td>
+      <td>0.27</td>
+      <td>0.28</td>
+      <td>0.31</td>
+      <td>0.28</td>
+      <td>0.35</td>
+      <td>0.24</td>
+      <td>2.33</td>
       <td>0.00</td>
       <td>0.28</td>
     </tr>
     <tr>
       <th>extr_c</th>
-      <td>-0.27</td>
+      <td>-0.26</td>
       <td>-0.24</td>
       <td>0.65</td>
       <td>0.80</td>
       <td>-0.13</td>
       <td>0.01</td>
-      <td>0.16</td>
-      <td>0.30</td>
+      <td>0.17</td>
+      <td>0.31</td>
       <td>-0.62</td>
       <td>-1.05</td>
-      <td>2.82</td>
+      <td>2.81</td>
       <td>1.04</td>
       <td>0.27</td>
       <td>0.31</td>
       <td>0.12</td>
+      <td>-0.13</td>
       <td>-0.12</td>
-      <td>-0.12</td>
-      <td>0.43</td>
+      <td>0.42</td>
       <td>0.50</td>
-      <td>0.39</td>
-      <td>-0.08</td>
-      <td>-0.08</td>
+      <td>0.40</td>
+      <td>-0.06</td>
+      <td>-0.06</td>
       <td>-0.02</td>
-      <td>-0.04</td>
-      <td>-0.06</td>
-      <td>0.03</td>
-      <td>-0.15</td>
-      <td>-0.12</td>
+      <td>-0.03</td>
+      <td>-0.05</td>
+      <td>0.04</td>
+      <td>-0.14</td>
+      <td>-0.11</td>
       <td>-0.03</td>
       <td>-0.06</td>
       <td>-0.03</td>
-      <td>-1.16</td>
-      <td>-0.07</td>
+      <td>-1.21</td>
+      <td>-0.08</td>
       <td>-0.13</td>
     </tr>
     <tr>
       <th>extr_d</th>
-      <td>-0.04</td>
+      <td>-0.03</td>
+      <td>-0.18</td>
+      <td>0.45</td>
+      <td>0.47</td>
       <td>-0.19</td>
-      <td>0.46</td>
-      <td>0.48</td>
-      <td>-0.22</td>
-      <td>0.16</td>
-      <td>0.30</td>
-      <td>0.18</td>
-      <td>-0.80</td>
+      <td>0.14</td>
+      <td>0.29</td>
+      <td>0.17</td>
+      <td>-0.79</td>
       <td>-0.89</td>
       <td>1.04</td>
-      <td>2.20</td>
-      <td>0.44</td>
-      <td>0.38</td>
-      <td>-0.02</td>
-      <td>-0.37</td>
-      <td>-0.11</td>
-      <td>0.39</td>
+      <td>2.22</td>
       <td>0.43</td>
+      <td>0.35</td>
+      <td>-0.00</td>
+      <td>-0.36</td>
+      <td>-0.10</td>
       <td>0.37</td>
+      <td>0.40</td>
+      <td>0.36</td>
       <td>0.03</td>
       <td>0.04</td>
-      <td>0.03</td>
+      <td>0.04</td>
       <td>0.05</td>
-      <td>-0.03</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>0.11</td>
-      <td>-0.06</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>-1.97</td>
       <td>-0.01</td>
-      <td>-0.20</td>
+      <td>0.02</td>
+      <td>0.06</td>
+      <td>0.13</td>
+      <td>-0.04</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>-1.75</td>
+      <td>-0.01</td>
+      <td>-0.22</td>
     </tr>
     <tr>
       <th>neur_a</th>
       <td>-0.03</td>
-      <td>-0.05</td>
-      <td>0.34</td>
-      <td>0.38</td>
-      <td>-0.28</td>
-      <td>-0.11</td>
+      <td>-0.04</td>
+      <td>0.35</td>
+      <td>0.39</td>
+      <td>-0.27</td>
+      <td>-0.12</td>
       <td>0.61</td>
       <td>0.56</td>
       <td>-0.13</td>
-      <td>-0.24</td>
+      <td>-0.25</td>
       <td>0.27</td>
-      <td>0.44</td>
-      <td>2.59</td>
-      <td>1.33</td>
-      <td>-0.91</td>
-      <td>-0.95</td>
+      <td>0.43</td>
+      <td>2.62</td>
+      <td>1.34</td>
+      <td>-0.93</td>
+      <td>-0.94</td>
       <td>0.03</td>
-      <td>0.29</td>
-      <td>0.57</td>
+      <td>0.28</td>
+      <td>0.54</td>
       <td>0.42</td>
-      <td>0.01</td>
       <td>0.02</td>
-      <td>0.00</td>
-      <td>-0.01</td>
       <td>0.04</td>
+      <td>0.02</td>
+      <td>0.01</td>
+      <td>0.06</td>
       <td>0.05</td>
       <td>-0.08</td>
-      <td>-0.09</td>
-      <td>0.04</td>
+      <td>-0.08</td>
+      <td>0.03</td>
       <td>-0.00</td>
-      <td>0.11</td>
+      <td>0.10</td>
       <td>-3.18</td>
       <td>0.08</td>
-      <td>-0.24</td>
+      <td>-0.26</td>
     </tr>
     <tr>
       <th>neur_b</th>
-      <td>-0.11</td>
-      <td>-0.08</td>
+      <td>-0.10</td>
+      <td>-0.07</td>
       <td>0.38</td>
       <td>0.46</td>
-      <td>-0.40</td>
-      <td>-0.26</td>
+      <td>-0.39</td>
+      <td>-0.28</td>
       <td>0.66</td>
-      <td>0.68</td>
-      <td>0.03</td>
+      <td>0.67</td>
+      <td>0.04</td>
       <td>-0.28</td>
       <td>0.31</td>
-      <td>0.38</td>
-      <td>1.33</td>
+      <td>0.35</td>
+      <td>1.34</td>
       <td>2.47</td>
       <td>-0.99</td>
       <td>-0.99</td>
-      <td>0.10</td>
-      <td>0.29</td>
-      <td>0.53</td>
-      <td>0.40</td>
+      <td>0.09</td>
+      <td>0.28</td>
+      <td>0.52</td>
+      <td>0.39</td>
       <td>0.03</td>
       <td>0.04</td>
       <td>-0.04</td>
-      <td>-0.02</td>
-      <td>0.05</td>
+      <td>-0.01</td>
+      <td>0.06</td>
       <td>-0.03</td>
-      <td>-0.15</td>
-      <td>-0.22</td>
+      <td>-0.16</td>
+      <td>-0.23</td>
       <td>-0.02</td>
       <td>-0.09</td>
       <td>0.02</td>
-      <td>-4.29</td>
+      <td>-4.32</td>
       <td>0.05</td>
       <td>-0.18</td>
     </tr>
     <tr>
       <th>neur_c</th>
-      <td>0.28</td>
+      <td>0.27</td>
       <td>0.22</td>
+      <td>-0.11</td>
       <td>-0.12</td>
-      <td>-0.12</td>
-      <td>0.38</td>
-      <td>0.18</td>
+      <td>0.40</td>
+      <td>0.19</td>
       <td>-0.32</td>
       <td>-0.28</td>
-      <td>0.13</td>
-      <td>0.41</td>
+      <td>0.14</td>
+      <td>0.43</td>
       <td>0.12</td>
-      <td>-0.02</td>
-      <td>-0.91</td>
+      <td>-0.00</td>
+      <td>-0.93</td>
       <td>-0.99</td>
-      <td>2.13</td>
-      <td>1.02</td>
+      <td>2.15</td>
+      <td>1.04</td>
       <td>0.20</td>
-      <td>-0.06</td>
-      <td>-0.23</td>
-      <td>-0.20</td>
+      <td>-0.04</td>
+      <td>-0.22</td>
+      <td>-0.18</td>
       <td>-0.05</td>
       <td>0.01</td>
       <td>0.05</td>
-      <td>0.06</td>
+      <td>0.05</td>
       <td>-0.05</td>
-      <td>0.19</td>
+      <td>0.23</td>
+      <td>0.40</td>
       <td>0.37</td>
-      <td>0.36</td>
-      <td>0.20</td>
-      <td>0.29</td>
-      <td>0.18</td>
-      <td>3.35</td>
-      <td>-0.10</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>0.21</td>
+      <td>3.33</td>
+      <td>-0.09</td>
       <td>0.20</td>
     </tr>
     <tr>
       <th>neur_d</th>
       <td>0.09</td>
-      <td>0.10</td>
+      <td>0.11</td>
       <td>-0.03</td>
-      <td>-0.07</td>
-      <td>0.41</td>
-      <td>0.05</td>
-      <td>-0.26</td>
-      <td>-0.21</td>
-      <td>0.33</td>
-      <td>0.61</td>
-      <td>-0.12</td>
-      <td>-0.37</td>
-      <td>-0.95</td>
-      <td>-0.99</td>
-      <td>1.02</td>
-      <td>2.69</td>
-      <td>0.17</td>
-      <td>0.06</td>
-      <td>-0.16</td>
       <td>-0.08</td>
+      <td>0.41</td>
+      <td>0.06</td>
+      <td>-0.26</td>
+      <td>-0.20</td>
+      <td>0.35</td>
+      <td>0.63</td>
+      <td>-0.13</td>
+      <td>-0.36</td>
+      <td>-0.94</td>
+      <td>-0.99</td>
+      <td>1.04</td>
+      <td>2.70</td>
+      <td>0.17</td>
+      <td>0.07</td>
+      <td>-0.15</td>
+      <td>-0.07</td>
       <td>-0.19</td>
       <td>-0.13</td>
-      <td>-0.09</td>
+      <td>-0.08</td>
       <td>-0.08</td>
       <td>-0.09</td>
-      <td>0.39</td>
+      <td>0.41</td>
       <td>0.49</td>
       <td>0.39</td>
-      <td>0.36</td>
-      <td>0.45</td>
-      <td>0.27</td>
-      <td>4.39</td>
+      <td>0.38</td>
+      <td>0.46</td>
+      <td>0.29</td>
+      <td>4.28</td>
       <td>-0.06</td>
       <td>0.38</td>
     </tr>
     <tr>
       <th>open_a</th>
-      <td>0.49</td>
+      <td>0.48</td>
       <td>0.62</td>
       <td>-0.23</td>
-      <td>-0.13</td>
-      <td>0.20</td>
-      <td>-0.02</td>
+      <td>-0.12</td>
+      <td>0.22</td>
+      <td>-0.04</td>
       <td>0.05</td>
-      <td>0.09</td>
-      <td>0.48</td>
+      <td>0.08</td>
+      <td>0.49</td>
       <td>0.39</td>
       <td>-0.12</td>
-      <td>-0.11</td>
+      <td>-0.10</td>
       <td>0.03</td>
-      <td>0.10</td>
+      <td>0.09</td>
       <td>0.20</td>
       <td>0.17</td>
-      <td>2.31</td>
+      <td>2.30</td>
       <td>-0.43</td>
       <td>-0.55</td>
       <td>-0.98</td>
@@ -857,142 +858,142 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.17</td>
       <td>0.20</td>
       <td>0.12</td>
-      <td>-0.12</td>
-      <td>-0.21</td>
+      <td>-0.14</td>
+      <td>-0.22</td>
       <td>-0.19</td>
-      <td>-0.20</td>
-      <td>-0.15</td>
-      <td>-0.23</td>
-      <td>-0.89</td>
+      <td>-0.21</td>
+      <td>-0.17</td>
+      <td>-0.24</td>
+      <td>-0.88</td>
       <td>-0.01</td>
       <td>-0.06</td>
     </tr>
     <tr>
       <th>open_b</th>
       <td>-0.23</td>
-      <td>-0.29</td>
-      <td>0.59</td>
-      <td>0.50</td>
-      <td>0.05</td>
-      <td>0.02</td>
-      <td>0.04</td>
-      <td>0.17</td>
-      <td>-0.07</td>
-      <td>-0.20</td>
-      <td>0.43</td>
-      <td>0.39</td>
-      <td>0.29</td>
-      <td>0.29</td>
-      <td>-0.06</td>
+      <td>-0.28</td>
+      <td>0.58</td>
+      <td>0.49</td>
       <td>0.06</td>
+      <td>0.04</td>
+      <td>0.03</td>
+      <td>0.17</td>
+      <td>-0.08</td>
+      <td>-0.20</td>
+      <td>0.42</td>
+      <td>0.37</td>
+      <td>0.28</td>
+      <td>0.28</td>
+      <td>-0.04</td>
+      <td>0.07</td>
       <td>-0.43</td>
-      <td>2.57</td>
-      <td>1.20</td>
-      <td>0.54</td>
+      <td>2.60</td>
+      <td>1.23</td>
+      <td>0.55</td>
       <td>0.05</td>
       <td>0.05</td>
       <td>0.01</td>
-      <td>0.07</td>
+      <td>0.08</td>
       <td>0.05</td>
       <td>0.10</td>
       <td>-0.08</td>
-      <td>-0.00</td>
-      <td>-0.06</td>
-      <td>-0.06</td>
-      <td>-0.04</td>
-      <td>0.75</td>
-      <td>-0.03</td>
-      <td>-0.07</td>
+      <td>-0.02</td>
+      <td>-0.05</td>
+      <td>-0.05</td>
+      <td>-0.02</td>
+      <td>0.66</td>
+      <td>-0.02</td>
+      <td>-0.08</td>
     </tr>
     <tr>
       <th>open_c</th>
-      <td>-0.21</td>
-      <td>-0.35</td>
+      <td>-0.20</td>
+      <td>-0.34</td>
       <td>0.59</td>
-      <td>0.58</td>
+      <td>0.57</td>
       <td>-0.17</td>
-      <td>-0.11</td>
+      <td>-0.10</td>
       <td>0.30</td>
       <td>0.47</td>
-      <td>-0.13</td>
-      <td>-0.25</td>
+      <td>-0.12</td>
+      <td>-0.24</td>
       <td>0.50</td>
-      <td>0.43</td>
-      <td>0.57</td>
-      <td>0.53</td>
-      <td>-0.23</td>
-      <td>-0.16</td>
+      <td>0.40</td>
+      <td>0.54</td>
+      <td>0.52</td>
+      <td>-0.22</td>
+      <td>-0.15</td>
       <td>-0.55</td>
-      <td>1.20</td>
-      <td>2.40</td>
-      <td>0.77</td>
+      <td>1.23</td>
+      <td>2.43</td>
+      <td>0.78</td>
       <td>-0.07</td>
       <td>-0.02</td>
-      <td>-0.06</td>
+      <td>-0.07</td>
       <td>-0.02</td>
-      <td>0.01</td>
+      <td>0.02</td>
       <td>0.23</td>
       <td>0.09</td>
-      <td>0.19</td>
       <td>0.18</td>
+      <td>0.19</td>
       <td>0.14</td>
-      <td>0.24</td>
-      <td>-0.77</td>
+      <td>0.26</td>
+      <td>-0.87</td>
       <td>0.01</td>
       <td>-0.07</td>
     </tr>
     <tr>
       <th>open_d</th>
-      <td>-0.30</td>
+      <td>-0.29</td>
       <td>-0.45</td>
-      <td>0.67</td>
+      <td>0.68</td>
       <td>0.49</td>
-      <td>-0.19</td>
+      <td>-0.21</td>
       <td>-0.08</td>
-      <td>0.49</td>
-      <td>0.39</td>
+      <td>0.50</td>
+      <td>0.40</td>
       <td>-0.16</td>
       <td>-0.17</td>
-      <td>0.39</td>
-      <td>0.37</td>
-      <td>0.42</td>
       <td>0.40</td>
-      <td>-0.20</td>
-      <td>-0.08</td>
+      <td>0.36</td>
+      <td>0.42</td>
+      <td>0.39</td>
+      <td>-0.18</td>
+      <td>-0.07</td>
       <td>-0.98</td>
-      <td>0.54</td>
-      <td>0.77</td>
-      <td>2.68</td>
+      <td>0.55</td>
+      <td>0.78</td>
+      <td>2.69</td>
       <td>-0.14</td>
       <td>-0.04</td>
       <td>-0.14</td>
       <td>-0.13</td>
       <td>-0.08</td>
-      <td>0.32</td>
-      <td>0.31</td>
-      <td>0.18</td>
-      <td>0.39</td>
-      <td>0.32</td>
+      <td>0.35</td>
+      <td>0.33</td>
+      <td>0.20</td>
       <td>0.41</td>
-      <td>-0.28</td>
+      <td>0.35</td>
+      <td>0.43</td>
+      <td>-0.32</td>
       <td>0.01</td>
       <td>0.01</td>
     </tr>
     <tr>
       <th>pi_misuse</th>
       <td>0.19</td>
-      <td>0.25</td>
-      <td>-0.14</td>
-      <td>-0.18</td>
+      <td>0.26</td>
+      <td>-0.13</td>
+      <td>-0.17</td>
       <td>0.06</td>
-      <td>0.15</td>
+      <td>0.13</td>
       <td>-0.09</td>
       <td>-0.05</td>
-      <td>0.02</td>
-      <td>0.12</td>
-      <td>-0.08</td>
-      <td>0.03</td>
       <td>0.01</td>
+      <td>0.11</td>
+      <td>-0.06</td>
+      <td>0.03</td>
+      <td>0.02</td>
       <td>0.03</td>
       <td>-0.05</td>
       <td>-0.19</td>
@@ -1000,36 +1001,36 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.05</td>
       <td>-0.07</td>
       <td>-0.14</td>
-      <td>2.36</td>
+      <td>2.35</td>
       <td>1.69</td>
       <td>1.78</td>
       <td>1.77</td>
-      <td>1.47</td>
-      <td>-0.36</td>
-      <td>-0.33</td>
-      <td>-0.25</td>
+      <td>1.46</td>
+      <td>-0.37</td>
       <td>-0.34</td>
-      <td>-0.36</td>
+      <td>-0.26</td>
       <td>-0.35</td>
-      <td>1.94</td>
+      <td>-0.37</td>
+      <td>-0.36</td>
+      <td>1.92</td>
       <td>0.04</td>
-      <td>-0.09</td>
+      <td>-0.10</td>
     </tr>
     <tr>
       <th>pi_safety</th>
-      <td>0.12</td>
+      <td>0.13</td>
       <td>0.14</td>
       <td>-0.06</td>
-      <td>-0.11</td>
+      <td>-0.10</td>
       <td>0.07</td>
-      <td>0.10</td>
+      <td>0.09</td>
       <td>-0.03</td>
+      <td>-0.07</td>
+      <td>-0.01</td>
+      <td>0.18</td>
       <td>-0.06</td>
-      <td>-0.00</td>
-      <td>0.19</td>
-      <td>-0.08</td>
       <td>0.04</td>
-      <td>0.02</td>
+      <td>0.04</td>
       <td>0.04</td>
       <td>0.01</td>
       <td>-0.13</td>
@@ -1038,389 +1039,389 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>-0.02</td>
       <td>-0.04</td>
       <td>1.69</td>
-      <td>2.27</td>
+      <td>2.26</td>
       <td>1.69</td>
       <td>1.68</td>
-      <td>1.41</td>
-      <td>-0.34</td>
-      <td>-0.30</td>
-      <td>-0.21</td>
+      <td>1.40</td>
       <td>-0.35</td>
-      <td>-0.33</td>
-      <td>-0.37</td>
-      <td>1.61</td>
+      <td>-0.31</td>
+      <td>-0.21</td>
+      <td>-0.36</td>
+      <td>-0.34</td>
+      <td>-0.38</td>
+      <td>1.64</td>
       <td>0.03</td>
-      <td>-0.09</td>
+      <td>-0.10</td>
     </tr>
     <tr>
       <th>pi_share</th>
-      <td>0.18</td>
-      <td>0.21</td>
-      <td>-0.14</td>
+      <td>0.19</td>
+      <td>0.22</td>
+      <td>-0.15</td>
       <td>-0.17</td>
       <td>0.09</td>
       <td>0.15</td>
-      <td>-0.09</td>
+      <td>-0.10</td>
       <td>-0.06</td>
-      <td>-0.07</td>
-      <td>0.17</td>
+      <td>-0.08</td>
+      <td>0.16</td>
       <td>-0.02</td>
-      <td>0.03</td>
-      <td>0.00</td>
+      <td>0.04</td>
+      <td>0.02</td>
       <td>-0.04</td>
       <td>0.05</td>
-      <td>-0.09</td>
+      <td>-0.08</td>
       <td>0.17</td>
       <td>0.01</td>
-      <td>-0.06</td>
+      <td>-0.07</td>
       <td>-0.14</td>
       <td>1.78</td>
       <td>1.69</td>
-      <td>2.33</td>
-      <td>1.75</td>
-      <td>1.41</td>
-      <td>-0.31</td>
-      <td>-0.29</td>
-      <td>-0.22</td>
-      <td>-0.33</td>
-      <td>-0.31</td>
+      <td>2.31</td>
+      <td>1.74</td>
+      <td>1.40</td>
       <td>-0.32</td>
-      <td>1.84</td>
+      <td>-0.31</td>
+      <td>-0.22</td>
+      <td>-0.34</td>
+      <td>-0.33</td>
+      <td>-0.33</td>
+      <td>1.82</td>
       <td>0.03</td>
-      <td>-0.06</td>
+      <td>-0.08</td>
     </tr>
     <tr>
       <th>pi_stranger</th>
       <td>0.16</td>
       <td>0.25</td>
-      <td>-0.11</td>
-      <td>-0.21</td>
+      <td>-0.10</td>
+      <td>-0.20</td>
       <td>0.11</td>
-      <td>0.14</td>
+      <td>0.13</td>
       <td>-0.11</td>
       <td>-0.13</td>
-      <td>0.02</td>
-      <td>0.16</td>
-      <td>-0.04</td>
+      <td>0.01</td>
+      <td>0.14</td>
+      <td>-0.03</td>
       <td>0.05</td>
+      <td>0.01</td>
       <td>-0.01</td>
-      <td>-0.02</td>
-      <td>0.06</td>
+      <td>0.05</td>
       <td>-0.08</td>
       <td>0.20</td>
-      <td>0.07</td>
+      <td>0.08</td>
       <td>-0.02</td>
       <td>-0.13</td>
       <td>1.77</td>
       <td>1.68</td>
-      <td>1.75</td>
-      <td>2.44</td>
-      <td>1.38</td>
-      <td>-0.40</td>
-      <td>-0.36</td>
-      <td>-0.31</td>
-      <td>-0.40</td>
-      <td>-0.42</td>
+      <td>1.74</td>
+      <td>2.43</td>
+      <td>1.37</td>
+      <td>-0.41</td>
       <td>-0.38</td>
-      <td>1.78</td>
+      <td>-0.32</td>
+      <td>-0.41</td>
+      <td>-0.43</td>
+      <td>-0.40</td>
+      <td>1.74</td>
       <td>0.05</td>
-      <td>-0.11</td>
+      <td>-0.12</td>
     </tr>
     <tr>
       <th>pi_track</th>
-      <td>0.12</td>
+      <td>0.13</td>
       <td>0.20</td>
+      <td>-0.10</td>
       <td>-0.11</td>
-      <td>-0.12</td>
       <td>0.12</td>
-      <td>0.12</td>
+      <td>0.11</td>
       <td>-0.11</td>
       <td>-0.09</td>
       <td>0.03</td>
-      <td>0.20</td>
-      <td>-0.06</td>
-      <td>-0.03</td>
-      <td>0.04</td>
-      <td>0.05</td>
+      <td>0.19</td>
+      <td>-0.05</td>
+      <td>-0.01</td>
+      <td>0.06</td>
+      <td>0.06</td>
       <td>-0.05</td>
       <td>-0.09</td>
       <td>0.12</td>
       <td>0.05</td>
-      <td>0.01</td>
+      <td>0.02</td>
       <td>-0.08</td>
-      <td>1.47</td>
-      <td>1.41</td>
-      <td>1.41</td>
-      <td>1.38</td>
-      <td>2.71</td>
+      <td>1.46</td>
+      <td>1.40</td>
+      <td>1.40</td>
+      <td>1.37</td>
+      <td>2.69</td>
       <td>-0.27</td>
-      <td>-0.34</td>
-      <td>-0.18</td>
-      <td>-0.31</td>
+      <td>-0.33</td>
+      <td>-0.17</td>
+      <td>-0.30</td>
       <td>-0.26</td>
       <td>-0.33</td>
-      <td>2.39</td>
+      <td>2.43</td>
       <td>0.03</td>
-      <td>-0.09</td>
+      <td>-0.11</td>
     </tr>
     <tr>
       <th>trst_gov</th>
-      <td>0.11</td>
-      <td>-0.01</td>
-      <td>0.14</td>
+      <td>0.10</td>
+      <td>-0.02</td>
+      <td>0.16</td>
       <td>-0.02</td>
       <td>0.12</td>
-      <td>-0.05</td>
+      <td>-0.04</td>
       <td>0.28</td>
-      <td>0.09</td>
-      <td>0.14</td>
-      <td>0.25</td>
-      <td>0.03</td>
-      <td>0.01</td>
+      <td>0.10</td>
+      <td>0.13</td>
+      <td>0.27</td>
+      <td>0.04</td>
+      <td>0.02</td>
       <td>0.05</td>
       <td>-0.03</td>
-      <td>0.19</td>
-      <td>0.39</td>
-      <td>-0.12</td>
+      <td>0.23</td>
+      <td>0.41</td>
+      <td>-0.14</td>
       <td>0.10</td>
       <td>0.23</td>
-      <td>0.32</td>
-      <td>-0.36</td>
-      <td>-0.34</td>
-      <td>-0.31</td>
-      <td>-0.40</td>
+      <td>0.35</td>
+      <td>-0.37</td>
+      <td>-0.35</td>
+      <td>-0.32</td>
+      <td>-0.41</td>
       <td>-0.27</td>
-      <td>3.20</td>
-      <td>2.05</td>
-      <td>1.66</td>
-      <td>2.06</td>
-      <td>2.53</td>
-      <td>1.82</td>
-      <td>1.04</td>
-      <td>-0.03</td>
+      <td>3.22</td>
+      <td>2.09</td>
+      <td>1.68</td>
+      <td>2.09</td>
+      <td>2.57</td>
+      <td>1.85</td>
+      <td>1.10</td>
+      <td>-0.02</td>
       <td>0.46</td>
     </tr>
     <tr>
       <th>trst_leg</th>
-      <td>0.28</td>
+      <td>0.25</td>
       <td>-0.01</td>
-      <td>-0.06</td>
-      <td>-0.22</td>
+      <td>-0.04</td>
+      <td>-0.21</td>
       <td>0.06</td>
       <td>0.09</td>
-      <td>0.31</td>
-      <td>0.02</td>
-      <td>-0.10</td>
-      <td>0.26</td>
-      <td>-0.15</td>
-      <td>0.04</td>
+      <td>0.32</td>
+      <td>0.03</td>
+      <td>-0.09</td>
+      <td>0.28</td>
+      <td>-0.14</td>
+      <td>0.06</td>
       <td>-0.08</td>
-      <td>-0.15</td>
-      <td>0.37</td>
+      <td>-0.16</td>
+      <td>0.40</td>
       <td>0.49</td>
-      <td>-0.21</td>
+      <td>-0.22</td>
       <td>-0.08</td>
       <td>0.09</td>
-      <td>0.31</td>
-      <td>-0.33</td>
-      <td>-0.30</td>
-      <td>-0.29</td>
-      <td>-0.36</td>
+      <td>0.33</td>
       <td>-0.34</td>
-      <td>2.05</td>
-      <td>3.52</td>
-      <td>2.47</td>
-      <td>1.99</td>
-      <td>2.41</td>
-      <td>1.90</td>
-      <td>2.46</td>
+      <td>-0.31</td>
+      <td>-0.31</td>
+      <td>-0.38</td>
+      <td>-0.33</td>
+      <td>2.09</td>
+      <td>3.54</td>
+      <td>2.48</td>
+      <td>2.02</td>
+      <td>2.43</td>
+      <td>1.93</td>
+      <td>2.59</td>
       <td>-0.08</td>
       <td>0.48</td>
     </tr>
     <tr>
       <th>trst_plc</th>
-      <td>0.30</td>
-      <td>0.08</td>
-      <td>-0.14</td>
-      <td>-0.28</td>
-      <td>0.10</td>
-      <td>0.23</td>
-      <td>0.17</td>
-      <td>-0.05</td>
-      <td>-0.17</td>
-      <td>0.29</td>
+      <td>0.28</td>
+      <td>0.07</td>
       <td>-0.12</td>
-      <td>0.11</td>
-      <td>-0.09</td>
-      <td>-0.22</td>
-      <td>0.36</td>
+      <td>-0.27</td>
+      <td>0.09</td>
+      <td>0.22</td>
+      <td>0.17</td>
+      <td>-0.03</td>
+      <td>-0.17</td>
+      <td>0.31</td>
+      <td>-0.11</td>
+      <td>0.13</td>
+      <td>-0.08</td>
+      <td>-0.23</td>
+      <td>0.37</td>
       <td>0.39</td>
       <td>-0.19</td>
-      <td>-0.00</td>
-      <td>0.19</td>
+      <td>-0.02</td>
       <td>0.18</td>
-      <td>-0.25</td>
+      <td>0.20</td>
+      <td>-0.26</td>
       <td>-0.21</td>
       <td>-0.22</td>
-      <td>-0.31</td>
-      <td>-0.18</td>
-      <td>1.66</td>
-      <td>2.47</td>
-      <td>3.23</td>
-      <td>1.46</td>
-      <td>1.90</td>
-      <td>1.39</td>
-      <td>2.46</td>
+      <td>-0.32</td>
+      <td>-0.17</td>
+      <td>1.68</td>
+      <td>2.48</td>
+      <td>3.24</td>
+      <td>1.47</td>
+      <td>1.91</td>
+      <td>1.41</td>
+      <td>2.63</td>
       <td>-0.05</td>
       <td>0.37</td>
     </tr>
     <tr>
       <th>trst_pol</th>
-      <td>0.10</td>
-      <td>-0.03</td>
       <td>0.09</td>
+      <td>-0.03</td>
+      <td>0.10</td>
       <td>-0.00</td>
       <td>0.08</td>
-      <td>-0.09</td>
+      <td>-0.08</td>
       <td>0.33</td>
-      <td>0.13</td>
+      <td>0.14</td>
       <td>0.15</td>
-      <td>0.26</td>
+      <td>0.28</td>
       <td>-0.03</td>
-      <td>-0.06</td>
-      <td>0.04</td>
+      <td>-0.04</td>
+      <td>0.03</td>
       <td>-0.02</td>
-      <td>0.20</td>
-      <td>0.36</td>
-      <td>-0.20</td>
-      <td>-0.06</td>
-      <td>0.18</td>
-      <td>0.39</td>
-      <td>-0.34</td>
+      <td>0.23</td>
+      <td>0.38</td>
+      <td>-0.21</td>
+      <td>-0.05</td>
+      <td>0.19</td>
+      <td>0.41</td>
       <td>-0.35</td>
-      <td>-0.33</td>
-      <td>-0.40</td>
-      <td>-0.31</td>
-      <td>2.06</td>
-      <td>1.99</td>
-      <td>1.46</td>
-      <td>2.48</td>
-      <td>2.23</td>
-      <td>2.12</td>
-      <td>1.37</td>
+      <td>-0.36</td>
+      <td>-0.34</td>
+      <td>-0.41</td>
+      <td>-0.30</td>
+      <td>2.09</td>
+      <td>2.02</td>
+      <td>1.47</td>
+      <td>2.50</td>
+      <td>2.25</td>
+      <td>2.14</td>
+      <td>1.47</td>
       <td>0.01</td>
-      <td>0.42</td>
+      <td>0.41</td>
     </tr>
     <tr>
       <th>trst_prl</th>
-      <td>0.15</td>
-      <td>0.01</td>
-      <td>0.03</td>
-      <td>-0.07</td>
-      <td>0.08</td>
+      <td>0.14</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>-0.06</td>
+      <td>0.07</td>
       <td>0.02</td>
       <td>0.33</td>
-      <td>0.06</td>
+      <td>0.08</td>
       <td>0.10</td>
-      <td>0.33</td>
+      <td>0.35</td>
       <td>-0.06</td>
-      <td>0.00</td>
+      <td>0.02</td>
       <td>-0.00</td>
       <td>-0.09</td>
-      <td>0.29</td>
-      <td>0.45</td>
-      <td>-0.15</td>
-      <td>-0.06</td>
-      <td>0.14</td>
       <td>0.32</td>
-      <td>-0.36</td>
+      <td>0.46</td>
+      <td>-0.17</td>
+      <td>-0.05</td>
+      <td>0.14</td>
+      <td>0.35</td>
+      <td>-0.37</td>
+      <td>-0.34</td>
       <td>-0.33</td>
-      <td>-0.31</td>
-      <td>-0.42</td>
+      <td>-0.43</td>
       <td>-0.26</td>
-      <td>2.53</td>
-      <td>2.41</td>
-      <td>1.90</td>
-      <td>2.23</td>
-      <td>3.07</td>
-      <td>2.04</td>
-      <td>1.62</td>
+      <td>2.57</td>
+      <td>2.43</td>
+      <td>1.91</td>
+      <td>2.25</td>
+      <td>3.09</td>
+      <td>2.06</td>
+      <td>1.72</td>
       <td>-0.04</td>
-      <td>0.48</td>
+      <td>0.47</td>
     </tr>
     <tr>
       <th>trst_prt</th>
-      <td>0.11</td>
+      <td>0.10</td>
       <td>-0.02</td>
-      <td>0.12</td>
+      <td>0.13</td>
       <td>0.01</td>
-      <td>0.06</td>
+      <td>0.07</td>
       <td>-0.04</td>
-      <td>0.32</td>
-      <td>0.16</td>
-      <td>0.08</td>
-      <td>0.22</td>
-      <td>-0.03</td>
-      <td>0.01</td>
-      <td>0.11</td>
-      <td>0.02</td>
-      <td>0.18</td>
-      <td>0.27</td>
-      <td>-0.23</td>
-      <td>-0.04</td>
+      <td>0.33</td>
+      <td>0.17</td>
+      <td>0.09</td>
       <td>0.24</td>
-      <td>0.41</td>
-      <td>-0.35</td>
-      <td>-0.37</td>
-      <td>-0.32</td>
+      <td>-0.03</td>
+      <td>0.02</td>
+      <td>0.10</td>
+      <td>0.02</td>
+      <td>0.21</td>
+      <td>0.29</td>
+      <td>-0.24</td>
+      <td>-0.02</td>
+      <td>0.26</td>
+      <td>0.43</td>
+      <td>-0.36</td>
       <td>-0.38</td>
       <td>-0.33</td>
-      <td>1.82</td>
-      <td>1.90</td>
-      <td>1.39</td>
-      <td>2.12</td>
-      <td>2.04</td>
-      <td>2.37</td>
-      <td>1.36</td>
+      <td>-0.40</td>
+      <td>-0.33</td>
+      <td>1.85</td>
+      <td>1.93</td>
+      <td>1.41</td>
+      <td>2.14</td>
+      <td>2.06</td>
+      <td>2.39</td>
+      <td>1.40</td>
       <td>-0.01</td>
       <td>0.35</td>
     </tr>
     <tr>
       <th>age</th>
-      <td>1.96</td>
-      <td>1.19</td>
-      <td>-2.40</td>
+      <td>1.95</td>
+      <td>1.18</td>
+      <td>-2.46</td>
       <td>-2.16</td>
-      <td>2.58</td>
-      <td>1.35</td>
-      <td>-2.98</td>
-      <td>-2.12</td>
-      <td>-1.81</td>
-      <td>2.31</td>
-      <td>-1.16</td>
-      <td>-1.97</td>
+      <td>2.62</td>
+      <td>1.38</td>
+      <td>-2.96</td>
+      <td>-2.14</td>
+      <td>-1.88</td>
+      <td>2.33</td>
+      <td>-1.21</td>
+      <td>-1.75</td>
       <td>-3.18</td>
-      <td>-4.29</td>
-      <td>3.35</td>
-      <td>4.39</td>
-      <td>-0.89</td>
-      <td>0.75</td>
-      <td>-0.77</td>
-      <td>-0.28</td>
-      <td>1.94</td>
-      <td>1.61</td>
-      <td>1.84</td>
-      <td>1.78</td>
-      <td>2.39</td>
-      <td>1.04</td>
-      <td>2.46</td>
-      <td>2.46</td>
-      <td>1.37</td>
-      <td>1.62</td>
-      <td>1.36</td>
-      <td>195.13</td>
-      <td>-0.57</td>
-      <td>0.06</td>
+      <td>-4.32</td>
+      <td>3.33</td>
+      <td>4.28</td>
+      <td>-0.88</td>
+      <td>0.66</td>
+      <td>-0.87</td>
+      <td>-0.32</td>
+      <td>1.92</td>
+      <td>1.64</td>
+      <td>1.82</td>
+      <td>1.74</td>
+      <td>2.43</td>
+      <td>1.10</td>
+      <td>2.59</td>
+      <td>2.63</td>
+      <td>1.47</td>
+      <td>1.72</td>
+      <td>1.40</td>
+      <td>194.19</td>
+      <td>-0.53</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>gender</th>
@@ -1431,17 +1432,17 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.05</td>
       <td>0.05</td>
       <td>-0.04</td>
-      <td>-0.05</td>
-      <td>-0.02</td>
+      <td>-0.04</td>
+      <td>-0.03</td>
       <td>0.00</td>
-      <td>-0.07</td>
+      <td>-0.08</td>
       <td>-0.01</td>
       <td>0.08</td>
       <td>0.05</td>
-      <td>-0.10</td>
+      <td>-0.09</td>
       <td>-0.06</td>
       <td>-0.01</td>
-      <td>-0.03</td>
+      <td>-0.02</td>
       <td>0.01</td>
       <td>0.01</td>
       <td>0.04</td>
@@ -1449,52 +1450,52 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.03</td>
       <td>0.05</td>
       <td>0.03</td>
-      <td>-0.03</td>
+      <td>-0.02</td>
       <td>-0.08</td>
       <td>-0.05</td>
       <td>0.01</td>
       <td>-0.04</td>
       <td>-0.01</td>
-      <td>-0.57</td>
+      <td>-0.53</td>
       <td>0.25</td>
-      <td>-0.04</td>
+      <td>-0.03</td>
     </tr>
     <tr>
       <th>income</th>
       <td>-0.06</td>
       <td>-0.01</td>
-      <td>0.02</td>
-      <td>-0.03</td>
-      <td>0.17</td>
+      <td>0.01</td>
+      <td>-0.05</td>
+      <td>0.16</td>
       <td>0.10</td>
-      <td>-0.12</td>
+      <td>-0.13</td>
       <td>-0.12</td>
       <td>0.21</td>
       <td>0.28</td>
       <td>-0.13</td>
-      <td>-0.20</td>
-      <td>-0.24</td>
+      <td>-0.22</td>
+      <td>-0.26</td>
       <td>-0.18</td>
       <td>0.20</td>
       <td>0.38</td>
       <td>-0.06</td>
-      <td>-0.07</td>
+      <td>-0.08</td>
       <td>-0.07</td>
       <td>0.01</td>
-      <td>-0.09</td>
-      <td>-0.09</td>
-      <td>-0.06</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.08</td>
+      <td>-0.12</td>
       <td>-0.11</td>
-      <td>-0.09</td>
       <td>0.46</td>
       <td>0.48</td>
       <td>0.37</td>
-      <td>0.42</td>
-      <td>0.48</td>
+      <td>0.41</td>
+      <td>0.47</td>
       <td>0.35</td>
-      <td>0.06</td>
-      <td>-0.04</td>
-      <td>1.31</td>
+      <td>0.02</td>
+      <td>-0.03</td>
+      <td>1.32</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="modelimplied" role="tabpanel" aria-labelledby="modelimplied-tab"><table border="1" class="dataframe table table-bordered">
@@ -1540,250 +1541,250 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
   <tbody>
     <tr>
       <th>agrb_a</th>
-      <td>1.74</td>
-      <td>0.76</td>
-      <td>-0.86</td>
+      <td>1.75</td>
+      <td>0.91</td>
+      <td>-0.87</td>
       <td>-0.82</td>
-      <td>0.21</td>
-      <td>0.26</td>
-      <td>-0.43</td>
-      <td>-0.37</td>
-      <td>0.31</td>
-      <td>0.41</td>
-      <td>-0.34</td>
-      <td>-0.32</td>
-      <td>-0.19</td>
-      <td>-0.20</td>
-      <td>0.15</td>
-      <td>0.16</td>
-      <td>0.29</td>
-      <td>-0.40</td>
-      <td>-0.47</td>
-      <td>-0.37</td>
-      <td>0.14</td>
-      <td>0.14</td>
-      <td>0.14</td>
-      <td>0.14</td>
-      <td>0.12</td>
-      <td>0.04</td>
-      <td>0.04</td>
       <td>0.03</td>
       <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
+      <td>-0.06</td>
+      <td>-0.05</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>-0.02</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.18</td>
+      <td>0.17</td>
+      <td>0.18</td>
+      <td>0.18</td>
+      <td>0.15</td>
+      <td>0.16</td>
+      <td>0.16</td>
+      <td>0.12</td>
+      <td>0.15</td>
+      <td>0.17</td>
+      <td>0.14</td>
+      <td>2.01</td>
+      <td>0.13</td>
+      <td>-0.03</td>
     </tr>
     <tr>
       <th>agrb_b</th>
-      <td>0.76</td>
+      <td>0.91</td>
       <td>1.73</td>
-      <td>-0.82</td>
-      <td>-0.78</td>
-      <td>0.20</td>
-      <td>0.25</td>
-      <td>-0.41</td>
-      <td>-0.36</td>
-      <td>0.29</td>
-      <td>0.39</td>
-      <td>-0.32</td>
-      <td>-0.30</td>
-      <td>-0.18</td>
-      <td>-0.19</td>
+      <td>-0.77</td>
+      <td>-0.73</td>
+      <td>0.03</td>
+      <td>0.03</td>
+      <td>-0.06</td>
+      <td>-0.05</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.16</td>
+      <td>0.15</td>
+      <td>0.16</td>
+      <td>0.16</td>
+      <td>0.13</td>
+      <td>0.14</td>
+      <td>0.14</td>
+      <td>0.11</td>
       <td>0.14</td>
       <td>0.15</td>
-      <td>0.28</td>
-      <td>-0.38</td>
-      <td>-0.45</td>
-      <td>-0.36</td>
-      <td>0.14</td>
       <td>0.13</td>
-      <td>0.13</td>
-      <td>0.13</td>
+      <td>1.78</td>
       <td>0.11</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.03</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.03</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.02</td>
     </tr>
     <tr>
       <th>agrb_c</th>
-      <td>-0.86</td>
-      <td>-0.82</td>
-      <td>2.43</td>
-      <td>0.89</td>
-      <td>-0.23</td>
-      <td>-0.28</td>
-      <td>0.46</td>
-      <td>0.40</td>
-      <td>-0.33</td>
-      <td>-0.44</td>
-      <td>0.36</td>
-      <td>0.34</td>
-      <td>0.21</td>
-      <td>0.22</td>
+      <td>-0.87</td>
+      <td>-0.77</td>
+      <td>2.42</td>
+      <td>0.70</td>
+      <td>-0.03</td>
+      <td>-0.03</td>
+      <td>0.05</td>
+      <td>0.04</td>
+      <td>-0.01</td>
+      <td>-0.02</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>-0.16</td>
-      <td>-0.17</td>
-      <td>-0.31</td>
-      <td>0.43</td>
-      <td>0.51</td>
-      <td>0.40</td>
-      <td>-0.15</td>
       <td>-0.15</td>
       <td>-0.15</td>
       <td>-0.15</td>
       <td>-0.12</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.03</td>
-      <td>-0.04</td>
-      <td>-0.05</td>
-      <td>-0.04</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.13</td>
+      <td>-0.13</td>
+      <td>-0.10</td>
+      <td>-0.13</td>
+      <td>-0.14</td>
+      <td>-0.12</td>
+      <td>-1.70</td>
+      <td>-0.11</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>agrb_d</th>
       <td>-0.82</td>
-      <td>-0.78</td>
-      <td>0.89</td>
+      <td>-0.73</td>
+      <td>0.70</td>
       <td>2.28</td>
-      <td>-0.22</td>
-      <td>-0.27</td>
-      <td>0.44</td>
-      <td>0.38</td>
-      <td>-0.31</td>
-      <td>-0.42</td>
-      <td>0.35</td>
-      <td>0.33</td>
-      <td>0.20</td>
-      <td>0.21</td>
-      <td>-0.15</td>
-      <td>-0.16</td>
-      <td>-0.30</td>
-      <td>0.41</td>
-      <td>0.48</td>
-      <td>0.38</td>
+      <td>-0.02</td>
+      <td>-0.03</td>
+      <td>0.05</td>
+      <td>0.04</td>
+      <td>-0.01</td>
+      <td>-0.02</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>-0.15</td>
       <td>-0.14</td>
-      <td>-0.14</td>
+      <td>-0.15</td>
       <td>-0.14</td>
       <td>-0.12</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.03</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.13</td>
+      <td>-0.13</td>
+      <td>-0.10</td>
+      <td>-0.12</td>
+      <td>-0.14</td>
+      <td>-0.11</td>
+      <td>-1.61</td>
+      <td>-0.10</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>cons_a</th>
-      <td>0.21</td>
-      <td>0.20</td>
-      <td>-0.23</td>
-      <td>-0.22</td>
-      <td>2.04</td>
-      <td>0.46</td>
-      <td>-0.75</td>
-      <td>-0.66</td>
+      <td>0.03</td>
+      <td>0.03</td>
+      <td>-0.03</td>
+      <td>-0.02</td>
+      <td>2.05</td>
+      <td>0.45</td>
+      <td>-0.74</td>
+      <td>-0.62</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>-0.02</td>
+      <td>-0.02</td>
+      <td>-0.04</td>
+      <td>-0.04</td>
+      <td>0.03</td>
+      <td>0.03</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
       <td>0.04</td>
-      <td>0.05</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.27</td>
-      <td>-0.28</td>
-      <td>0.21</td>
-      <td>0.22</td>
-      <td>0.08</td>
+      <td>0.04</td>
+      <td>0.04</td>
+      <td>0.04</td>
+      <td>0.03</td>
       <td>-0.12</td>
-      <td>-0.14</td>
+      <td>-0.12</td>
+      <td>-0.09</td>
+      <td>-0.12</td>
+      <td>-0.13</td>
       <td>-0.11</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.13</td>
-      <td>-0.13</td>
-      <td>-0.10</td>
-      <td>-0.12</td>
-      <td>-0.14</td>
-      <td>-0.12</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>1.40</td>
+      <td>0.02</td>
+      <td>0.07</td>
     </tr>
     <tr>
       <th>cons_b</th>
-      <td>0.26</td>
-      <td>0.25</td>
-      <td>-0.28</td>
-      <td>-0.27</td>
-      <td>0.46</td>
-      <td>2.21</td>
-      <td>-0.92</td>
+      <td>0.04</td>
+      <td>0.03</td>
+      <td>-0.03</td>
+      <td>-0.03</td>
+      <td>0.45</td>
+      <td>2.22</td>
+      <td>-0.95</td>
       <td>-0.80</td>
-      <td>0.05</td>
+      <td>0.02</td>
+      <td>0.03</td>
+      <td>-0.03</td>
+      <td>-0.02</td>
+      <td>-0.05</td>
+      <td>-0.05</td>
+      <td>0.04</td>
+      <td>0.04</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
       <td>0.06</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>-0.33</td>
-      <td>-0.35</td>
-      <td>0.26</td>
-      <td>0.27</td>
-      <td>0.10</td>
-      <td>-0.14</td>
-      <td>-0.17</td>
-      <td>-0.13</td>
-      <td>0.05</td>
       <td>0.05</td>
       <td>0.05</td>
       <td>0.05</td>
       <td>0.04</td>
-      <td>-0.16</td>
-      <td>-0.16</td>
+      <td>-0.15</td>
+      <td>-0.15</td>
       <td>-0.12</td>
       <td>-0.15</td>
       <td>-0.17</td>
       <td>-0.14</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>1.80</td>
+      <td>0.03</td>
+      <td>0.09</td>
     </tr>
     <tr>
       <th>cons_c</th>
-      <td>-0.43</td>
-      <td>-0.41</td>
-      <td>0.46</td>
-      <td>0.44</td>
-      <td>-0.75</td>
-      <td>-0.92</td>
+      <td>-0.06</td>
+      <td>-0.06</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>-0.74</td>
+      <td>-0.95</td>
       <td>2.54</td>
-      <td>1.32</td>
-      <td>-0.08</td>
-      <td>-0.10</td>
+      <td>1.31</td>
+      <td>-0.04</td>
+      <td>-0.05</td>
+      <td>0.04</td>
+      <td>0.04</td>
+      <td>0.07</td>
       <td>0.08</td>
-      <td>0.08</td>
-      <td>0.54</td>
-      <td>0.57</td>
-      <td>-0.43</td>
-      <td>-0.44</td>
-      <td>-0.17</td>
-      <td>0.23</td>
-      <td>0.27</td>
-      <td>0.22</td>
+      <td>-0.06</td>
+      <td>-0.07</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
       <td>-0.09</td>
-      <td>-0.08</td>
+      <td>-0.09</td>
       <td>-0.09</td>
       <td>-0.09</td>
       <td>-0.07</td>
@@ -1793,515 +1794,515 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.25</td>
       <td>0.28</td>
       <td>0.23</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-2.97</td>
+      <td>-0.05</td>
+      <td>-0.15</td>
     </tr>
     <tr>
       <th>cons_d</th>
-      <td>-0.37</td>
-      <td>-0.36</td>
-      <td>0.40</td>
-      <td>0.38</td>
-      <td>-0.66</td>
+      <td>-0.05</td>
+      <td>-0.05</td>
+      <td>0.04</td>
+      <td>0.04</td>
+      <td>-0.62</td>
       <td>-0.80</td>
-      <td>1.32</td>
+      <td>1.31</td>
       <td>2.72</td>
-      <td>-0.07</td>
-      <td>-0.09</td>
-      <td>0.07</td>
-      <td>0.07</td>
-      <td>0.47</td>
-      <td>0.50</td>
-      <td>-0.37</td>
-      <td>-0.38</td>
-      <td>-0.15</td>
-      <td>0.20</td>
-      <td>0.24</td>
-      <td>0.19</td>
-      <td>-0.08</td>
-      <td>-0.07</td>
-      <td>-0.08</td>
-      <td>-0.08</td>
+      <td>-0.03</td>
+      <td>-0.04</td>
+      <td>0.03</td>
+      <td>0.03</td>
+      <td>0.06</td>
+      <td>0.06</td>
+      <td>-0.05</td>
       <td>-0.06</td>
-      <td>0.22</td>
-      <td>0.22</td>
-      <td>0.18</td>
-      <td>0.22</td>
-      <td>0.24</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>-0.08</td>
+      <td>-0.07</td>
+      <td>-0.08</td>
+      <td>-0.07</td>
+      <td>-0.06</td>
+      <td>0.21</td>
+      <td>0.21</td>
+      <td>0.17</td>
+      <td>0.21</td>
+      <td>0.23</td>
       <td>0.20</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-2.48</td>
+      <td>-0.04</td>
+      <td>-0.13</td>
     </tr>
     <tr>
       <th>extr_a</th>
-      <td>0.31</td>
-      <td>0.29</td>
-      <td>-0.33</td>
-      <td>-0.31</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>-0.04</td>
+      <td>-0.03</td>
+      <td>2.18</td>
+      <td>1.02</td>
+      <td>-0.81</td>
+      <td>-0.79</td>
+      <td>-0.05</td>
+      <td>-0.05</td>
       <td>0.04</td>
       <td>0.05</td>
-      <td>-0.08</td>
-      <td>-0.07</td>
-      <td>2.16</td>
-      <td>1.00</td>
-      <td>-0.82</td>
-      <td>-0.77</td>
-      <td>-0.23</td>
-      <td>-0.24</td>
-      <td>0.18</td>
-      <td>0.19</td>
-      <td>0.18</td>
-      <td>-0.25</td>
-      <td>-0.29</td>
-      <td>-0.23</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>0.04</td>
-      <td>0.03</td>
-      <td>0.03</td>
-      <td>0.03</td>
-      <td>0.03</td>
-      <td>0.04</td>
-      <td>0.03</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.10</td>
+      <td>0.10</td>
+      <td>0.08</td>
+      <td>0.09</td>
+      <td>0.10</td>
+      <td>0.09</td>
+      <td>0.83</td>
+      <td>0.01</td>
+      <td>0.20</td>
     </tr>
     <tr>
       <th>extr_b</th>
-      <td>0.41</td>
-      <td>0.39</td>
-      <td>-0.44</td>
-      <td>-0.42</td>
-      <td>0.05</td>
-      <td>0.06</td>
-      <td>-0.10</td>
-      <td>-0.09</td>
-      <td>1.00</td>
-      <td>2.80</td>
-      <td>-1.10</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>-0.02</td>
+      <td>-0.02</td>
+      <td>0.02</td>
+      <td>0.03</td>
+      <td>-0.05</td>
+      <td>-0.04</td>
+      <td>1.02</td>
+      <td>2.81</td>
+      <td>-1.07</td>
       <td>-1.03</td>
-      <td>-0.31</td>
-      <td>-0.33</td>
-      <td>0.25</td>
-      <td>0.26</td>
-      <td>0.25</td>
-      <td>-0.33</td>
-      <td>-0.40</td>
-      <td>-0.31</td>
-      <td>0.07</td>
+      <td>-0.07</td>
+      <td>-0.07</td>
       <td>0.06</td>
-      <td>0.07</td>
-      <td>0.07</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>0.04</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>0.04</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.01</td>
+      <td>0.13</td>
+      <td>0.13</td>
+      <td>0.10</td>
+      <td>0.12</td>
+      <td>0.14</td>
+      <td>0.12</td>
+      <td>1.08</td>
+      <td>0.01</td>
+      <td>0.26</td>
     </tr>
     <tr>
       <th>extr_c</th>
-      <td>-0.34</td>
-      <td>-0.32</td>
-      <td>0.36</td>
-      <td>0.35</td>
-      <td>-0.04</td>
+      <td>-0.02</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.02</td>
+      <td>-0.03</td>
+      <td>0.04</td>
+      <td>0.03</td>
+      <td>-0.81</td>
+      <td>-1.07</td>
+      <td>2.81</td>
+      <td>0.82</td>
+      <td>0.05</td>
+      <td>0.05</td>
       <td>-0.05</td>
-      <td>0.08</td>
-      <td>0.07</td>
-      <td>-0.82</td>
-      <td>-1.10</td>
-      <td>2.82</td>
-      <td>0.85</td>
-      <td>0.26</td>
-      <td>0.27</td>
-      <td>-0.20</td>
+      <td>-0.05</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.08</td>
+      <td>-0.10</td>
+      <td>-0.11</td>
+      <td>-0.09</td>
+      <td>-0.87</td>
+      <td>-0.01</td>
       <td>-0.21</td>
-      <td>-0.20</td>
-      <td>0.27</td>
-      <td>0.32</td>
-      <td>0.26</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.03</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.03</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <th>extr_d</th>
-      <td>-0.32</td>
-      <td>-0.30</td>
-      <td>0.34</td>
-      <td>0.33</td>
-      <td>-0.04</td>
-      <td>-0.05</td>
-      <td>0.08</td>
-      <td>0.07</td>
-      <td>-0.77</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.02</td>
+      <td>-0.02</td>
+      <td>0.04</td>
+      <td>0.03</td>
+      <td>-0.79</td>
       <td>-1.03</td>
-      <td>0.85</td>
-      <td>2.20</td>
-      <td>0.24</td>
-      <td>0.25</td>
-      <td>-0.19</td>
+      <td>0.82</td>
+      <td>2.22</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>-0.04</td>
+      <td>-0.05</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.08</td>
+      <td>-0.10</td>
+      <td>-0.11</td>
+      <td>-0.09</td>
+      <td>-0.84</td>
+      <td>-0.01</td>
       <td>-0.20</td>
-      <td>-0.19</td>
-      <td>0.26</td>
-      <td>0.30</td>
-      <td>0.24</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.04</td>
-      <td>-0.03</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <th>neur_a</th>
-      <td>-0.19</td>
-      <td>-0.18</td>
-      <td>0.21</td>
-      <td>0.20</td>
-      <td>-0.27</td>
-      <td>-0.33</td>
-      <td>0.54</td>
-      <td>0.47</td>
-      <td>-0.23</td>
-      <td>-0.31</td>
-      <td>0.26</td>
-      <td>0.24</td>
-      <td>2.59</td>
-      <td>1.29</td>
-      <td>-0.96</td>
-      <td>-1.00</td>
-      <td>-0.21</td>
-      <td>0.29</td>
-      <td>0.34</td>
-      <td>0.27</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.03</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
       <td>-0.01</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
+      <td>-0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.04</td>
+      <td>-0.05</td>
+      <td>0.07</td>
+      <td>0.06</td>
+      <td>-0.05</td>
+      <td>-0.07</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>2.62</td>
+      <td>1.20</td>
+      <td>-0.99</td>
+      <td>-1.04</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>0.06</td>
+      <td>-0.25</td>
+      <td>-0.25</td>
+      <td>-0.20</td>
+      <td>-0.24</td>
+      <td>-0.27</td>
+      <td>-0.23</td>
+      <td>-3.95</td>
+      <td>0.07</td>
+      <td>-0.26</td>
     </tr>
     <tr>
       <th>neur_b</th>
-      <td>-0.20</td>
-      <td>-0.19</td>
-      <td>0.22</td>
-      <td>0.21</td>
-      <td>-0.28</td>
-      <td>-0.35</td>
-      <td>0.57</td>
-      <td>0.50</td>
-      <td>-0.24</td>
-      <td>-0.33</td>
-      <td>0.27</td>
-      <td>0.25</td>
-      <td>1.29</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.04</td>
+      <td>-0.05</td>
+      <td>0.08</td>
+      <td>0.06</td>
+      <td>-0.05</td>
+      <td>-0.07</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>1.20</td>
       <td>2.47</td>
-      <td>-1.02</td>
-      <td>-1.06</td>
-      <td>-0.22</td>
-      <td>0.30</td>
-      <td>0.36</td>
-      <td>0.29</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.03</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-1.03</td>
+      <td>-1.08</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.08</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>0.06</td>
+      <td>-0.26</td>
+      <td>-0.26</td>
+      <td>-0.20</td>
+      <td>-0.25</td>
+      <td>-0.28</td>
+      <td>-0.24</td>
+      <td>-4.10</td>
+      <td>0.08</td>
+      <td>-0.27</td>
     </tr>
     <tr>
       <th>neur_c</th>
-      <td>0.15</td>
-      <td>0.14</td>
-      <td>-0.16</td>
-      <td>-0.15</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.03</td>
+      <td>0.04</td>
+      <td>-0.06</td>
+      <td>-0.05</td>
+      <td>0.04</td>
+      <td>0.06</td>
+      <td>-0.05</td>
+      <td>-0.04</td>
+      <td>-0.99</td>
+      <td>-1.03</td>
+      <td>2.15</td>
+      <td>0.89</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.06</td>
+      <td>-0.06</td>
+      <td>-0.06</td>
+      <td>-0.06</td>
+      <td>-0.05</td>
       <td>0.21</td>
-      <td>0.26</td>
-      <td>-0.43</td>
-      <td>-0.37</td>
-      <td>0.18</td>
-      <td>0.25</td>
-      <td>-0.20</td>
-      <td>-0.19</td>
-      <td>-0.96</td>
-      <td>-1.02</td>
-      <td>2.13</td>
-      <td>0.79</td>
+      <td>0.22</td>
       <td>0.17</td>
-      <td>-0.23</td>
-      <td>-0.27</td>
-      <td>-0.21</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>0.01</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.21</td>
+      <td>0.23</td>
+      <td>0.20</td>
+      <td>3.39</td>
+      <td>-0.06</td>
+      <td>0.22</td>
     </tr>
     <tr>
       <th>neur_d</th>
-      <td>0.16</td>
-      <td>0.15</td>
-      <td>-0.17</td>
-      <td>-0.16</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.03</td>
+      <td>0.04</td>
+      <td>-0.07</td>
+      <td>-0.06</td>
+      <td>0.05</td>
+      <td>0.06</td>
+      <td>-0.05</td>
+      <td>-0.05</td>
+      <td>-1.04</td>
+      <td>-1.08</td>
+      <td>0.89</td>
+      <td>2.70</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.07</td>
+      <td>-0.06</td>
+      <td>-0.06</td>
+      <td>-0.06</td>
+      <td>-0.05</td>
+      <td>0.23</td>
+      <td>0.23</td>
+      <td>0.18</td>
       <td>0.22</td>
-      <td>0.27</td>
-      <td>-0.44</td>
-      <td>-0.38</td>
-      <td>0.19</td>
-      <td>0.26</td>
-      <td>-0.21</td>
-      <td>-0.20</td>
-      <td>-1.00</td>
-      <td>-1.06</td>
-      <td>0.79</td>
-      <td>2.69</td>
-      <td>0.17</td>
-      <td>-0.23</td>
-      <td>-0.28</td>
-      <td>-0.22</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>0.02</td>
-      <td>0.02</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>0.01</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.24</td>
+      <td>0.21</td>
+      <td>3.55</td>
+      <td>-0.07</td>
+      <td>0.23</td>
     </tr>
     <tr>
       <th>open_a</th>
-      <td>0.29</td>
-      <td>0.28</td>
-      <td>-0.31</td>
-      <td>-0.30</td>
-      <td>0.08</td>
-      <td>0.10</td>
-      <td>-0.17</td>
-      <td>-0.15</td>
-      <td>0.18</td>
-      <td>0.25</td>
-      <td>-0.20</td>
-      <td>-0.19</td>
-      <td>-0.21</td>
-      <td>-0.22</td>
-      <td>0.17</td>
-      <td>0.17</td>
-      <td>2.31</td>
-      <td>-0.59</td>
-      <td>-0.70</td>
-      <td>-0.56</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.13</td>
-      <td>-0.13</td>
-      <td>-0.10</td>
-      <td>-0.13</td>
-      <td>-0.14</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>2.30</td>
+      <td>-0.55</td>
+      <td>-0.66</td>
+      <td>-0.42</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>-0.12</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.12</td>
+      <td>-0.09</td>
+      <td>-0.12</td>
+      <td>-0.13</td>
+      <td>-0.11</td>
+      <td>0.10</td>
+      <td>-0.00</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>open_b</th>
-      <td>-0.40</td>
-      <td>-0.38</td>
-      <td>0.43</td>
-      <td>0.41</td>
-      <td>-0.12</td>
-      <td>-0.14</td>
-      <td>0.23</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.55</td>
+      <td>2.60</td>
+      <td>1.13</td>
+      <td>0.72</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
       <td>0.20</td>
-      <td>-0.25</td>
-      <td>-0.33</td>
-      <td>0.27</td>
-      <td>0.26</td>
-      <td>0.29</td>
-      <td>0.30</td>
-      <td>-0.23</td>
-      <td>-0.23</td>
-      <td>-0.59</td>
-      <td>2.57</td>
-      <td>0.95</td>
-      <td>0.76</td>
-      <td>-0.06</td>
-      <td>-0.06</td>
-      <td>-0.06</td>
-      <td>-0.06</td>
-      <td>-0.05</td>
-      <td>0.17</td>
-      <td>0.17</td>
-      <td>0.14</td>
-      <td>0.17</td>
-      <td>0.19</td>
+      <td>0.21</td>
       <td>0.16</td>
+      <td>0.20</td>
+      <td>0.22</td>
+      <td>0.19</td>
+      <td>-0.18</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.04</td>
     </tr>
     <tr>
       <th>open_c</th>
-      <td>-0.47</td>
-      <td>-0.45</td>
-      <td>0.51</td>
-      <td>0.48</td>
-      <td>-0.14</td>
-      <td>-0.17</td>
-      <td>0.27</td>
-      <td>0.24</td>
-      <td>-0.29</td>
-      <td>-0.40</td>
-      <td>0.32</td>
-      <td>0.30</td>
-      <td>0.34</td>
-      <td>0.36</td>
-      <td>-0.27</td>
-      <td>-0.28</td>
-      <td>-0.70</td>
-      <td>0.95</td>
-      <td>2.40</td>
-      <td>0.90</td>
-      <td>-0.07</td>
-      <td>-0.07</td>
-      <td>-0.07</td>
-      <td>-0.07</td>
-      <td>-0.06</td>
-      <td>0.21</td>
-      <td>0.21</td>
-      <td>0.16</td>
-      <td>0.20</td>
-      <td>0.22</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.66</td>
+      <td>1.13</td>
+      <td>2.43</td>
+      <td>0.86</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.25</td>
+      <td>0.25</td>
       <td>0.19</td>
+      <td>0.24</td>
+      <td>0.27</td>
+      <td>0.23</td>
+      <td>-0.21</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.05</td>
     </tr>
     <tr>
       <th>open_d</th>
-      <td>-0.37</td>
-      <td>-0.36</td>
-      <td>0.40</td>
-      <td>0.38</td>
-      <td>-0.11</td>
-      <td>-0.13</td>
-      <td>0.22</td>
-      <td>0.19</td>
-      <td>-0.23</td>
-      <td>-0.31</td>
-      <td>0.26</td>
-      <td>0.24</td>
-      <td>0.27</td>
-      <td>0.29</td>
-      <td>-0.21</td>
-      <td>-0.22</td>
-      <td>-0.56</td>
-      <td>0.76</td>
-      <td>0.90</td>
-      <td>2.68</td>
-      <td>-0.06</td>
-      <td>-0.05</td>
-      <td>-0.06</td>
-      <td>-0.06</td>
-      <td>-0.05</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.42</td>
+      <td>0.72</td>
+      <td>0.86</td>
+      <td>2.69</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
       <td>0.16</td>
       <td>0.16</td>
-      <td>0.13</td>
-      <td>0.16</td>
-      <td>0.18</td>
+      <td>0.12</td>
       <td>0.15</td>
+      <td>0.17</td>
+      <td>0.14</td>
+      <td>-0.14</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.03</td>
     </tr>
     <tr>
       <th>pi_misuse</th>
-      <td>0.14</td>
-      <td>0.14</td>
-      <td>-0.15</td>
+      <td>0.18</td>
+      <td>0.16</td>
+      <td>-0.16</td>
       <td>-0.15</td>
       <td>0.04</td>
-      <td>0.05</td>
+      <td>0.06</td>
       <td>-0.09</td>
       <td>-0.08</td>
-      <td>0.05</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
       <td>0.07</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>0.04</td>
+      <td>0.08</td>
       <td>-0.06</td>
       <td>-0.07</td>
-      <td>-0.06</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
       <td>2.35</td>
-      <td>1.70</td>
+      <td>1.71</td>
       <td>1.77</td>
       <td>1.76</td>
       <td>1.44</td>
@@ -2309,492 +2310,492 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>-0.36</td>
       <td>-0.28</td>
       <td>-0.35</td>
-      <td>-0.38</td>
+      <td>-0.39</td>
       <td>-0.33</td>
-      <td>1.80</td>
-      <td>0.02</td>
-      <td>-0.08</td>
+      <td>1.90</td>
+      <td>0.04</td>
+      <td>-0.10</td>
     </tr>
     <tr>
       <th>pi_safety</th>
-      <td>0.14</td>
-      <td>0.13</td>
+      <td>0.17</td>
+      <td>0.15</td>
       <td>-0.15</td>
       <td>-0.14</td>
       <td>0.04</td>
       <td>0.05</td>
-      <td>-0.08</td>
+      <td>-0.09</td>
       <td>-0.07</td>
-      <td>0.05</td>
-      <td>0.06</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>0.04</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.07</td>
+      <td>0.07</td>
       <td>-0.06</td>
-      <td>-0.07</td>
-      <td>-0.05</td>
-      <td>1.70</td>
+      <td>-0.06</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
+      <td>1.71</td>
       <td>2.26</td>
       <td>1.68</td>
       <td>1.67</td>
-      <td>1.37</td>
+      <td>1.36</td>
       <td>-0.34</td>
       <td>-0.34</td>
-      <td>-0.26</td>
-      <td>-0.33</td>
+      <td>-0.27</td>
+      <td>-0.34</td>
       <td>-0.37</td>
       <td>-0.31</td>
-      <td>1.71</td>
-      <td>0.02</td>
-      <td>-0.08</td>
+      <td>1.80</td>
+      <td>0.03</td>
+      <td>-0.10</td>
     </tr>
     <tr>
       <th>pi_share</th>
-      <td>0.14</td>
-      <td>0.13</td>
+      <td>0.18</td>
+      <td>0.16</td>
       <td>-0.15</td>
-      <td>-0.14</td>
+      <td>-0.15</td>
       <td>0.04</td>
       <td>0.05</td>
       <td>-0.09</td>
       <td>-0.08</td>
-      <td>0.05</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
       <td>0.07</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>0.04</td>
+      <td>0.07</td>
       <td>-0.06</td>
-      <td>-0.07</td>
       <td>-0.06</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
       <td>1.77</td>
       <td>1.68</td>
-      <td>2.32</td>
+      <td>2.31</td>
       <td>1.74</td>
-      <td>1.43</td>
-      <td>-0.35</td>
-      <td>-0.35</td>
+      <td>1.42</td>
+      <td>-0.36</td>
+      <td>-0.36</td>
       <td>-0.28</td>
-      <td>-0.34</td>
-      <td>-0.38</td>
-      <td>-0.32</td>
-      <td>1.78</td>
-      <td>0.02</td>
-      <td>-0.08</td>
+      <td>-0.35</td>
+      <td>-0.39</td>
+      <td>-0.33</td>
+      <td>1.87</td>
+      <td>0.04</td>
+      <td>-0.10</td>
     </tr>
     <tr>
       <th>pi_stranger</th>
-      <td>0.14</td>
-      <td>0.13</td>
+      <td>0.18</td>
+      <td>0.16</td>
       <td>-0.15</td>
       <td>-0.14</td>
       <td>0.04</td>
       <td>0.05</td>
       <td>-0.09</td>
-      <td>-0.08</td>
-      <td>0.05</td>
-      <td>0.07</td>
-      <td>-0.05</td>
-      <td>-0.05</td>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>0.04</td>
-      <td>-0.06</td>
       <td>-0.07</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.07</td>
+      <td>0.07</td>
       <td>-0.06</td>
+      <td>-0.06</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
       <td>1.76</td>
       <td>1.67</td>
       <td>1.74</td>
       <td>2.43</td>
-      <td>1.42</td>
+      <td>1.41</td>
+      <td>-0.36</td>
+      <td>-0.36</td>
+      <td>-0.28</td>
       <td>-0.35</td>
-      <td>-0.35</td>
-      <td>-0.27</td>
-      <td>-0.34</td>
       <td>-0.38</td>
-      <td>-0.32</td>
-      <td>1.77</td>
-      <td>0.02</td>
-      <td>-0.08</td>
+      <td>-0.33</td>
+      <td>1.87</td>
+      <td>0.04</td>
+      <td>-0.10</td>
     </tr>
     <tr>
       <th>pi_track</th>
-      <td>0.12</td>
-      <td>0.11</td>
+      <td>0.15</td>
+      <td>0.13</td>
       <td>-0.12</td>
       <td>-0.12</td>
-      <td>0.04</td>
+      <td>0.03</td>
       <td>0.04</td>
       <td>-0.07</td>
       <td>-0.06</td>
-      <td>0.04</td>
-      <td>0.05</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>0.03</td>
-      <td>0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>0.04</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.06</td>
+      <td>0.06</td>
       <td>-0.05</td>
-      <td>-0.06</td>
       <td>-0.05</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
       <td>1.44</td>
-      <td>1.37</td>
-      <td>1.43</td>
+      <td>1.36</td>
       <td>1.42</td>
-      <td>2.71</td>
+      <td>1.41</td>
+      <td>2.69</td>
       <td>-0.29</td>
       <td>-0.29</td>
-      <td>-0.22</td>
+      <td>-0.23</td>
       <td>-0.28</td>
       <td>-0.31</td>
       <td>-0.26</td>
-      <td>1.45</td>
-      <td>0.01</td>
-      <td>-0.07</td>
+      <td>1.52</td>
+      <td>0.03</td>
+      <td>-0.08</td>
     </tr>
     <tr>
       <th>trst_gov</th>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
+      <td>0.16</td>
+      <td>0.14</td>
       <td>-0.13</td>
-      <td>-0.16</td>
+      <td>-0.13</td>
+      <td>-0.12</td>
+      <td>-0.15</td>
       <td>0.26</td>
-      <td>0.22</td>
-      <td>0.03</td>
-      <td>0.05</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>-0.13</td>
-      <td>0.17</td>
       <td>0.21</td>
+      <td>0.10</td>
+      <td>0.13</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.25</td>
+      <td>-0.26</td>
+      <td>0.21</td>
+      <td>0.23</td>
+      <td>-0.12</td>
+      <td>0.20</td>
+      <td>0.25</td>
       <td>0.16</td>
       <td>-0.36</td>
       <td>-0.34</td>
-      <td>-0.35</td>
-      <td>-0.35</td>
+      <td>-0.36</td>
+      <td>-0.36</td>
       <td>-0.29</td>
-      <td>3.20</td>
-      <td>2.15</td>
-      <td>1.69</td>
-      <td>2.10</td>
-      <td>2.32</td>
-      <td>1.97</td>
-      <td>1.43</td>
-      <td>-0.03</td>
-      <td>0.44</td>
+      <td>3.26</td>
+      <td>2.22</td>
+      <td>1.73</td>
+      <td>2.17</td>
+      <td>2.40</td>
+      <td>2.03</td>
+      <td>1.66</td>
+      <td>-0.02</td>
+      <td>0.43</td>
     </tr>
     <tr>
       <th>trst_leg</th>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
+      <td>0.16</td>
+      <td>0.14</td>
       <td>-0.13</td>
-      <td>-0.16</td>
+      <td>-0.13</td>
+      <td>-0.12</td>
+      <td>-0.15</td>
       <td>0.26</td>
-      <td>0.22</td>
-      <td>0.03</td>
-      <td>0.05</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>-0.13</td>
-      <td>0.17</td>
       <td>0.21</td>
+      <td>0.10</td>
+      <td>0.13</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.25</td>
+      <td>-0.26</td>
+      <td>0.22</td>
+      <td>0.23</td>
+      <td>-0.12</td>
+      <td>0.21</td>
+      <td>0.25</td>
       <td>0.16</td>
       <td>-0.36</td>
       <td>-0.34</td>
-      <td>-0.35</td>
-      <td>-0.35</td>
+      <td>-0.36</td>
+      <td>-0.36</td>
       <td>-0.29</td>
-      <td>2.15</td>
-      <td>3.53</td>
-      <td>1.69</td>
-      <td>2.11</td>
-      <td>2.33</td>
-      <td>1.97</td>
-      <td>1.43</td>
-      <td>-0.03</td>
-      <td>0.44</td>
+      <td>2.22</td>
+      <td>3.57</td>
+      <td>1.74</td>
+      <td>2.17</td>
+      <td>2.40</td>
+      <td>2.03</td>
+      <td>1.66</td>
+      <td>-0.02</td>
+      <td>0.43</td>
     </tr>
     <tr>
       <th>trst_plc</th>
-      <td>0.03</td>
-      <td>0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
+      <td>0.12</td>
+      <td>0.11</td>
       <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.09</td>
       <td>-0.12</td>
       <td>0.20</td>
+      <td>0.17</td>
+      <td>0.08</td>
+      <td>0.10</td>
+      <td>-0.08</td>
+      <td>-0.08</td>
+      <td>-0.20</td>
+      <td>-0.20</td>
+      <td>0.17</td>
       <td>0.18</td>
-      <td>0.03</td>
-      <td>0.04</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.01</td>
-      <td>-0.02</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>-0.10</td>
-      <td>0.14</td>
+      <td>-0.09</td>
       <td>0.16</td>
-      <td>0.13</td>
-      <td>-0.28</td>
-      <td>-0.26</td>
+      <td>0.19</td>
+      <td>0.12</td>
       <td>-0.28</td>
       <td>-0.27</td>
-      <td>-0.22</td>
+      <td>-0.28</td>
+      <td>-0.28</td>
+      <td>-0.23</td>
+      <td>1.73</td>
+      <td>1.74</td>
+      <td>3.26</td>
       <td>1.69</td>
-      <td>1.69</td>
-      <td>3.23</td>
-      <td>1.65</td>
-      <td>1.83</td>
-      <td>1.55</td>
-      <td>1.12</td>
+      <td>1.87</td>
+      <td>1.58</td>
+      <td>1.30</td>
       <td>-0.02</td>
-      <td>0.35</td>
+      <td>0.34</td>
     </tr>
     <tr>
       <th>trst_pol</th>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
+      <td>0.15</td>
+      <td>0.14</td>
+      <td>-0.13</td>
+      <td>-0.12</td>
       <td>-0.12</td>
       <td>-0.15</td>
       <td>0.25</td>
+      <td>0.21</td>
+      <td>0.09</td>
+      <td>0.12</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.24</td>
+      <td>-0.25</td>
+      <td>0.21</td>
       <td>0.22</td>
-      <td>0.03</td>
-      <td>0.05</td>
-      <td>-0.04</td>
-      <td>-0.03</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>-0.13</td>
-      <td>0.17</td>
+      <td>-0.12</td>
       <td>0.20</td>
-      <td>0.16</td>
+      <td>0.24</td>
+      <td>0.15</td>
       <td>-0.35</td>
-      <td>-0.33</td>
       <td>-0.34</td>
-      <td>-0.34</td>
+      <td>-0.35</td>
+      <td>-0.35</td>
       <td>-0.28</td>
-      <td>2.10</td>
-      <td>2.11</td>
-      <td>1.65</td>
-      <td>2.48</td>
-      <td>2.28</td>
-      <td>1.93</td>
-      <td>1.40</td>
-      <td>-0.03</td>
-      <td>0.43</td>
+      <td>2.17</td>
+      <td>2.17</td>
+      <td>1.69</td>
+      <td>2.54</td>
+      <td>2.34</td>
+      <td>1.98</td>
+      <td>1.62</td>
+      <td>-0.02</td>
+      <td>0.42</td>
     </tr>
     <tr>
       <th>trst_prl</th>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.05</td>
-      <td>-0.04</td>
+      <td>0.17</td>
+      <td>0.15</td>
       <td>-0.14</td>
+      <td>-0.14</td>
+      <td>-0.13</td>
       <td>-0.17</td>
       <td>0.28</td>
+      <td>0.23</td>
+      <td>0.10</td>
+      <td>0.14</td>
+      <td>-0.11</td>
+      <td>-0.11</td>
+      <td>-0.27</td>
+      <td>-0.28</td>
+      <td>0.23</td>
       <td>0.24</td>
-      <td>0.04</td>
-      <td>0.05</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>0.02</td>
-      <td>0.02</td>
-      <td>-0.14</td>
-      <td>0.19</td>
+      <td>-0.13</td>
       <td>0.22</td>
-      <td>0.18</td>
-      <td>-0.38</td>
+      <td>0.27</td>
+      <td>0.17</td>
+      <td>-0.39</td>
       <td>-0.37</td>
-      <td>-0.38</td>
+      <td>-0.39</td>
       <td>-0.38</td>
       <td>-0.31</td>
-      <td>2.32</td>
-      <td>2.33</td>
-      <td>1.83</td>
-      <td>2.28</td>
-      <td>3.07</td>
-      <td>2.13</td>
-      <td>1.55</td>
+      <td>2.40</td>
+      <td>2.40</td>
+      <td>1.87</td>
+      <td>2.34</td>
+      <td>3.13</td>
+      <td>2.19</td>
+      <td>1.79</td>
       <td>-0.03</td>
-      <td>0.48</td>
+      <td>0.47</td>
     </tr>
     <tr>
       <th>trst_prt</th>
-      <td>0.04</td>
-      <td>0.03</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
+      <td>0.14</td>
+      <td>0.13</td>
       <td>-0.12</td>
+      <td>-0.11</td>
+      <td>-0.11</td>
       <td>-0.14</td>
       <td>0.23</td>
       <td>0.20</td>
-      <td>0.03</td>
-      <td>0.04</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.02</td>
-      <td>-0.02</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>-0.12</td>
-      <td>0.16</td>
+      <td>0.09</td>
+      <td>0.12</td>
+      <td>-0.09</td>
+      <td>-0.09</td>
+      <td>-0.23</td>
+      <td>-0.24</td>
+      <td>0.20</td>
+      <td>0.21</td>
+      <td>-0.11</td>
       <td>0.19</td>
-      <td>0.15</td>
+      <td>0.23</td>
+      <td>0.14</td>
       <td>-0.33</td>
       <td>-0.31</td>
-      <td>-0.32</td>
-      <td>-0.32</td>
+      <td>-0.33</td>
+      <td>-0.33</td>
       <td>-0.26</td>
-      <td>1.97</td>
-      <td>1.97</td>
-      <td>1.55</td>
-      <td>1.93</td>
-      <td>2.13</td>
-      <td>2.37</td>
-      <td>1.31</td>
-      <td>-0.03</td>
-      <td>0.40</td>
+      <td>2.03</td>
+      <td>2.03</td>
+      <td>1.58</td>
+      <td>1.98</td>
+      <td>2.19</td>
+      <td>2.42</td>
+      <td>1.52</td>
+      <td>-0.02</td>
+      <td>0.39</td>
     </tr>
     <tr>
       <th>age</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.80</td>
-      <td>1.71</td>
+      <td>2.01</td>
       <td>1.78</td>
-      <td>1.77</td>
-      <td>1.45</td>
-      <td>1.43</td>
-      <td>1.43</td>
-      <td>1.12</td>
+      <td>-1.70</td>
+      <td>-1.61</td>
       <td>1.40</td>
-      <td>1.55</td>
-      <td>1.31</td>
-      <td>195.13</td>
-      <td>-0.57</td>
-      <td>0.06</td>
+      <td>1.80</td>
+      <td>-2.97</td>
+      <td>-2.48</td>
+      <td>0.83</td>
+      <td>1.08</td>
+      <td>-0.87</td>
+      <td>-0.84</td>
+      <td>-3.95</td>
+      <td>-4.10</td>
+      <td>3.39</td>
+      <td>3.55</td>
+      <td>0.10</td>
+      <td>-0.18</td>
+      <td>-0.21</td>
+      <td>-0.14</td>
+      <td>1.90</td>
+      <td>1.80</td>
+      <td>1.87</td>
+      <td>1.87</td>
+      <td>1.52</td>
+      <td>1.66</td>
+      <td>1.66</td>
+      <td>1.30</td>
+      <td>1.62</td>
+      <td>1.79</td>
+      <td>1.52</td>
+      <td>194.19</td>
+      <td>-0.53</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>gender</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.13</td>
+      <td>0.11</td>
+      <td>-0.11</td>
+      <td>-0.10</td>
       <td>0.02</td>
-      <td>0.02</td>
-      <td>0.02</td>
-      <td>0.02</td>
+      <td>0.03</td>
+      <td>-0.05</td>
+      <td>-0.04</td>
       <td>0.01</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.07</td>
+      <td>0.08</td>
+      <td>-0.06</td>
+      <td>-0.07</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.04</td>
+      <td>0.03</td>
+      <td>0.04</td>
+      <td>0.04</td>
+      <td>0.03</td>
+      <td>-0.02</td>
+      <td>-0.02</td>
+      <td>-0.02</td>
       <td>-0.02</td>
       <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.03</td>
-      <td>-0.57</td>
+      <td>-0.02</td>
+      <td>-0.53</td>
       <td>0.25</td>
-      <td>-0.04</td>
+      <td>-0.03</td>
     </tr>
     <tr>
       <th>income</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-0.08</td>
-      <td>-0.08</td>
-      <td>-0.08</td>
-      <td>-0.08</td>
-      <td>-0.07</td>
-      <td>0.44</td>
-      <td>0.44</td>
-      <td>0.35</td>
-      <td>0.43</td>
-      <td>0.48</td>
-      <td>0.40</td>
-      <td>0.06</td>
+      <td>-0.03</td>
+      <td>-0.02</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>0.09</td>
+      <td>-0.15</td>
+      <td>-0.13</td>
+      <td>0.20</td>
+      <td>0.26</td>
+      <td>-0.21</td>
+      <td>-0.20</td>
+      <td>-0.26</td>
+      <td>-0.27</td>
+      <td>0.22</td>
+      <td>0.23</td>
+      <td>0.02</td>
       <td>-0.04</td>
-      <td>1.31</td>
+      <td>-0.05</td>
+      <td>-0.03</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.10</td>
+      <td>-0.08</td>
+      <td>0.43</td>
+      <td>0.43</td>
+      <td>0.34</td>
+      <td>0.42</td>
+      <td>0.47</td>
+      <td>0.39</td>
+      <td>0.02</td>
+      <td>-0.03</td>
+      <td>1.32</td>
     </tr>
   </tbody>
 </table></div></div><br><center><h4>Model matrices</h4></center><ul class="nav nav-tabs" id="modelmatrices" role="tablist"><li class="nav-item" role="presentation">
@@ -2837,9 +2838,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.01</td>
+      <td>0.55</td>
+      <td>-0.01</td>
     </tr>
     <tr>
       <th>conscientiousness_l</th>
@@ -2850,9 +2851,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.01</td>
+      <td>0.12</td>
+      <td>0.06</td>
     </tr>
     <tr>
       <th>extraversion_l</th>
@@ -2864,8 +2865,8 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.15</td>
     </tr>
     <tr>
       <th>neuroticism_l</th>
@@ -2876,9 +2877,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.02</td>
+      <td>0.23</td>
+      <td>-0.19</td>
     </tr>
     <tr>
       <th>openness_l</th>
@@ -2890,33 +2891,33 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>pi_concerns_l</th>
-      <td>0.23</td>
-      <td>-0.02</td>
-      <td>0.02</td>
-      <td>0.05</td>
-      <td>-0.08</td>
+      <td>0.18</td>
+      <td>0.01</td>
+      <td>0.03</td>
+      <td>0.06</td>
+      <td>-0.06</td>
       <td>0.00</td>
       <td>-0.17</td>
       <td>0.01</td>
-      <td>0.08</td>
-      <td>-0.00</td>
+      <td>0.04</td>
+      <td>-0.01</td>
     </tr>
     <tr>
       <th>trust_in_inst_l</th>
-      <td>0.36</td>
-      <td>-0.58</td>
-      <td>0.01</td>
-      <td>-0.18</td>
-      <td>-0.53</td>
+      <td>0.18</td>
+      <td>-0.50</td>
+      <td>0.04</td>
+      <td>-0.14</td>
+      <td>-0.43</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.01</td>
-      <td>-0.05</td>
+      <td>-0.04</td>
       <td>0.36</td>
     </tr>
     <tr>
@@ -2954,8 +2955,8 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.14</td>
       <td>0.00</td>
     </tr>
   </tbody>
@@ -3133,9 +3134,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b46</td>
+      <td>_b48</td>
+      <td>_b47</td>
     </tr>
     <tr>
       <th>conscientiousness_l</th>
@@ -3146,9 +3147,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b40</td>
+      <td>_b42</td>
+      <td>_b41</td>
     </tr>
     <tr>
       <th>extraversion_l</th>
@@ -3159,9 +3160,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b37</td>
+      <td>_b39</td>
+      <td>_b38</td>
     </tr>
     <tr>
       <th>neuroticism_l</th>
@@ -3172,9 +3173,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b43</td>
+      <td>_b45</td>
+      <td>_b44</td>
     </tr>
     <tr>
       <th>openness_l</th>
@@ -3185,35 +3186,35 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b34</td>
+      <td>_b36</td>
+      <td>_b35</td>
     </tr>
     <tr>
       <th>pi_concerns_l</th>
-      <td>_b44</td>
-      <td>_b42</td>
-      <td>_b41</td>
-      <td>_b43</td>
-      <td>_b40</td>
+      <td>_b61</td>
+      <td>_b59</td>
+      <td>_b58</td>
+      <td>_b60</td>
+      <td>_b57</td>
       <td>0.00</td>
-      <td>_b45</td>
-      <td>_b47</td>
-      <td>_b46</td>
-      <td>_b48</td>
+      <td>_b62</td>
+      <td>_b64</td>
+      <td>_b63</td>
+      <td>_b65</td>
     </tr>
     <tr>
       <th>trust_in_inst_l</th>
-      <td>_b36</td>
-      <td>_b34</td>
-      <td>_b33</td>
-      <td>_b35</td>
-      <td>_b32</td>
+      <td>_b53</td>
+      <td>_b51</td>
+      <td>_b50</td>
+      <td>_b52</td>
+      <td>_b49</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_b38</td>
-      <td>_b37</td>
-      <td>_b39</td>
+      <td>_b55</td>
+      <td>_b54</td>
+      <td>_b56</td>
     </tr>
     <tr>
       <th>age</th>
@@ -3250,8 +3251,8 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b33</td>
+      <td>_b32</td>
       <td>0.00</td>
     </tr>
   </tbody>
@@ -3293,7 +3294,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>agrb_b</th>
-      <td>0.95</td>
+      <td>0.89</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3306,7 +3307,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>agrb_c</th>
-      <td>-1.08</td>
+      <td>-0.85</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3319,7 +3320,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>agrb_d</th>
-      <td>-1.03</td>
+      <td>-0.80</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3346,7 +3347,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     <tr>
       <th>cons_b</th>
       <td>0.00</td>
-      <td>1.22</td>
+      <td>1.28</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3359,7 +3360,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     <tr>
       <th>cons_c</th>
       <td>0.00</td>
-      <td>-2.01</td>
+      <td>-2.12</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3372,7 +3373,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     <tr>
       <th>cons_d</th>
       <td>0.00</td>
-      <td>-1.75</td>
+      <td>-1.77</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3399,7 +3400,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>extr_b</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.35</td>
+      <td>1.31</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3412,7 +3413,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>extr_c</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-1.11</td>
+      <td>-1.05</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3425,7 +3426,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>extr_d</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-1.04</td>
+      <td>-1.01</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3452,7 +3453,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.06</td>
+      <td>1.04</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3465,7 +3466,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.79</td>
+      <td>-0.86</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3478,7 +3479,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.82</td>
+      <td>-0.90</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3505,7 +3506,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-1.36</td>
+      <td>-1.70</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3518,7 +3519,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-1.61</td>
+      <td>-2.04</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3531,7 +3532,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-1.28</td>
+      <td>-1.30</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3611,7 +3612,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.92</td>
+      <td>0.93</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3637,7 +3638,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.73</td>
+      <td>0.72</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3819,7 +3820,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     <tr>
       <th>cons_c</th>
       <td>0.00</td>
-      <td>-0.34</td>
+      <td>-0.33</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3832,7 +3833,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     <tr>
       <th>cons_d</th>
       <td>0.00</td>
-      <td>-0.34</td>
+      <td>-0.33</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3872,7 +3873,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>extr_c</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.29</td>
+      <td>-0.28</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3885,7 +3886,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>extr_d</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.37</td>
+      <td>-0.36</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3991,7 +3992,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.42</td>
+      <td>-0.43</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4071,7 +4072,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.82</td>
+      <td>0.83</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4084,7 +4085,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.78</td>
+      <td>0.79</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4110,7 +4111,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.72</td>
+      <td>0.73</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4136,7 +4137,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.66</td>
+      <td>0.67</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4666,11 +4667,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
   <tbody>
     <tr>
       <th>agreeableness_l</th>
-      <td>0.80</td>
-      <td>0.21</td>
-      <td>0.31</td>
-      <td>-0.19</td>
-      <td>0.29</td>
+      <td>0.93</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4679,11 +4680,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>conscientiousness_l</th>
-      <td>0.21</td>
-      <td>0.37</td>
-      <td>0.04</td>
-      <td>-0.27</td>
-      <td>0.08</td>
+      <td>0.00</td>
+      <td>0.33</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4692,11 +4693,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>extraversion_l</th>
-      <td>0.31</td>
-      <td>0.04</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.74</td>
-      <td>-0.23</td>
-      <td>0.18</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4705,11 +4706,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>neuroticism_l</th>
-      <td>-0.19</td>
-      <td>-0.27</td>
-      <td>-0.23</td>
-      <td>1.22</td>
-      <td>-0.21</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.02</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4718,11 +4719,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>openness_l</th>
-      <td>0.29</td>
-      <td>0.08</td>
-      <td>0.18</td>
-      <td>-0.21</td>
-      <td>0.44</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.32</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4736,7 +4737,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.68</td>
+      <td>1.67</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4750,7 +4751,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>2.16</td>
+      <td>2.21</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4764,9 +4765,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>195.13</td>
-      <td>-0.57</td>
-      <td>0.06</td>
+      <td>194.19</td>
+      <td>-0.53</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>gender</th>
@@ -4777,9 +4778,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.57</td>
+      <td>-0.53</td>
       <td>0.25</td>
-      <td>-0.04</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>income</th>
@@ -4790,9 +4791,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.06</td>
-      <td>-0.04</td>
-      <td>1.31</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.32</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="PsiStart" role="tabpanel" aria-labelledby="PsiStart-tab"><table border="1" class="dataframe table table-bordered">
@@ -4912,9 +4913,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>195.13</td>
-      <td>-0.57</td>
-      <td>0.06</td>
+      <td>194.19</td>
+      <td>-0.53</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>gender</th>
@@ -4925,9 +4926,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.57</td>
+      <td>-0.53</td>
       <td>0.25</td>
-      <td>-0.04</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>income</th>
@@ -4938,9 +4939,9 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.06</td>
-      <td>-0.04</td>
-      <td>1.31</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.66</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="PsiNames" role="tabpanel" aria-labelledby="PsiNames-tab"><table border="1" class="dataframe table table-bordered">
@@ -4962,11 +4963,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
   <tbody>
     <tr>
       <th>agreeableness_l</th>
-      <td>_c45</td>
-      <td>_c47</td>
-      <td>_c48</td>
-      <td>_c41</td>
-      <td>_c46</td>
+      <td>_c32</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4975,11 +4976,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>conscientiousness_l</th>
-      <td>_c47</td>
-      <td>_c52</td>
-      <td>_c53</td>
-      <td>_c43</td>
-      <td>_c50</td>
+      <td>0.00</td>
+      <td>_c20</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4988,11 +4989,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>extraversion_l</th>
-      <td>_c48</td>
-      <td>_c53</td>
-      <td>_c54</td>
-      <td>_c44</td>
-      <td>_c51</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c30</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5001,11 +5002,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>neuroticism_l</th>
-      <td>_c41</td>
-      <td>_c43</td>
-      <td>_c44</td>
-      <td>_c40</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>_c42</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5014,11 +5015,11 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     </tr>
     <tr>
       <th>openness_l</th>
-      <td>_c46</td>
-      <td>_c50</td>
-      <td>_c51</td>
-      <td>_c42</td>
-      <td>_c49</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c12</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5032,7 +5033,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c20</td>
+      <td>_c33</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5046,7 +5047,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c30</td>
+      <td>_c21</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5062,7 +5063,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>_c1</td>
       <td>_c2</td>
-      <td>_c3</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>gender</th>
@@ -5074,8 +5075,8 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>_c2</td>
-      <td>_c4</td>
-      <td>_c5</td>
+      <td>_c3</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>income</th>
@@ -5086,8 +5087,8 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c3</td>
-      <td>_c5</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>_c6</td>
     </tr>
   </tbody>
@@ -5140,7 +5141,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
   <tbody>
     <tr>
       <th>agrb_a</th>
-      <td>0.94</td>
+      <td>0.72</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5178,7 +5179,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     <tr>
       <th>agrb_b</th>
       <td>0.00</td>
-      <td>1.00</td>
+      <td>0.92</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5216,7 +5217,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>agrb_c</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.50</td>
+      <td>1.68</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5254,7 +5255,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.44</td>
+      <td>1.62</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5292,7 +5293,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.66</td>
+      <td>1.70</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5368,7 +5369,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.02</td>
+      <td>0.97</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5406,7 +5407,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.57</td>
+      <td>1.62</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5444,7 +5445,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.43</td>
+      <td>1.40</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5482,7 +5483,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.46</td>
+      <td>1.47</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5520,7 +5521,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.91</td>
+      <td>1.96</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5558,7 +5559,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.41</td>
+      <td>1.42</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5596,7 +5597,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.37</td>
+      <td>1.46</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5634,7 +5635,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.10</td>
+      <td>1.22</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5672,7 +5673,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.37</td>
+      <td>1.29</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5710,7 +5711,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.87</td>
+      <td>1.76</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5748,7 +5749,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.87</td>
+      <td>1.97</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5786,7 +5787,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.76</td>
+      <td>1.66</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5824,7 +5825,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.27</td>
+      <td>1.08</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5862,7 +5863,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.97</td>
+      <td>2.14</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5938,7 +5939,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.65</td>
+      <td>0.64</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5976,7 +5977,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.57</td>
+      <td>0.56</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6052,7 +6053,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.55</td>
+      <td>1.54</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6090,7 +6091,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.06</td>
+      <td>1.04</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6128,7 +6129,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.37</td>
+      <td>1.35</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6166,7 +6167,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.90</td>
+      <td>1.91</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6242,7 +6243,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.55</td>
+      <td>0.54</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6280,7 +6281,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.56</td>
+      <td>0.57</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6516,7 +6517,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>agrb_c</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.22</td>
+      <td>1.21</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6630,7 +6631,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.10</td>
+      <td>1.11</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6744,7 +6745,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.08</td>
+      <td>1.09</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6820,7 +6821,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.41</td>
+      <td>1.40</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6858,7 +6859,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.10</td>
+      <td>1.11</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6896,7 +6897,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.30</td>
+      <td>1.31</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6934,7 +6935,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.24</td>
+      <td>1.23</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7010,7 +7011,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.34</td>
+      <td>1.35</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7048,7 +7049,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.16</td>
+      <td>1.15</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7086,7 +7087,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.29</td>
+      <td>1.30</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7124,7 +7125,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.20</td>
+      <td>1.22</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7314,7 +7315,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.22</td>
+      <td>1.21</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7352,7 +7353,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.36</td>
+      <td>1.35</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7390,7 +7391,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.60</td>
+      <td>1.61</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7428,7 +7429,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.76</td>
+      <td>1.77</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7466,7 +7467,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.61</td>
+      <td>1.62</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7504,7 +7505,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.24</td>
+      <td>1.25</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7542,7 +7543,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.54</td>
+      <td>1.55</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7580,7 +7581,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.18</td>
+      <td>1.20</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7740,7 +7741,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
   <tbody>
     <tr>
       <th>agrb_a</th>
-      <td>_c16</td>
+      <td>_c8</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7778,7 +7779,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
     <tr>
       <th>agrb_b</th>
       <td>0.00</td>
-      <td>_c12</td>
+      <td>_c24</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7816,7 +7817,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <th>agrb_c</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c15</td>
+      <td>_c16</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7854,7 +7855,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c37</td>
+      <td>_c18</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7892,7 +7893,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c28</td>
+      <td>_c15</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7968,7 +7969,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c18</td>
+      <td>_c41</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8006,7 +8007,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c9</td>
+      <td>_c19</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8044,7 +8045,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c27</td>
+      <td>_c23</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8082,7 +8083,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c19</td>
+      <td>_c39</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8120,7 +8121,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c24</td>
+      <td>_c36</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8158,7 +8159,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c23</td>
+      <td>_c17</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8196,7 +8197,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c34</td>
+      <td>_c40</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8234,7 +8235,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c13</td>
+      <td>_c4</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8272,7 +8273,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c25</td>
+      <td>_c5</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8310,7 +8311,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c39</td>
+      <td>_c31</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8348,7 +8349,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c31</td>
+      <td>_c38</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8386,7 +8387,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c36</td>
+      <td>_c26</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8424,7 +8425,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c32</td>
+      <td>_c13</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8462,7 +8463,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c21</td>
+      <td>_c37</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8500,7 +8501,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c11</td>
+      <td>_c29</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8538,7 +8539,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c7</td>
+      <td>_c25</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8576,7 +8577,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c10</td>
+      <td>_c14</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8614,7 +8615,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c17</td>
+      <td>_c7</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8652,7 +8653,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c26</td>
+      <td>_c22</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8690,7 +8691,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c22</td>
+      <td>_c9</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8728,7 +8729,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c8</td>
+      <td>_c27</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8766,7 +8767,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c33</td>
+      <td>_c28</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8804,7 +8805,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c29</td>
+      <td>_c11</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8842,7 +8843,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c14</td>
+      <td>_c34</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8880,7 +8881,7 @@ Params: -1.358 -1.609 -1.279 1.350 -1.107 -1.038 1.219 -2.009 -1.749 1.059 -0.78
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c38</td>
+      <td>_c10</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
