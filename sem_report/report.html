@@ -72,29 +72,30 @@ nav .nav-link.active {
     neuroticism_l =~ neur_a + neur_b + neur_c + neur_d
     agreeableness_l =~ agrb_a + agrb_b + agrb_c + agrb_d
 
-    ## Political Trust
+    ## Institutional Trust
     trust_in_inst_l =~ trst_prl + trst_pol + trst_prt + trst_leg + trst_plc + trst_gov
 
     ## PI concerns
     pi_concerns_l =~ pi_misuse + pi_track + pi_safety + pi_share + pi_stranger
 
     # REGRESSION MODELS
-    
-    ## Income as function of 
-    income ~ gender + age
+
+    ## Income as function of
+    income ~ female + age
 
     ## Personality as function of demographics
-    openness_l  ~ age + income + gender
-    extraversion_l ~ age + income + gender
-    conscientiousness_l ~ age + income + gender
-    neuroticism_l ~ age + income + gender
-    agreeableness_l ~ age + income + gender
-    
+    openness_l  ~ age + income + female
+    extraversion_l ~ age + income + female
+    conscientiousness_l ~ age + income + female
+    neuroticism_l ~ age + income + female
+    agreeableness_l ~ age + income + female
+
     ## Trust in institutions as function of personality traits and demographics
-    trust_in_inst_l ~ openness_l + extraversion_l + conscientiousness_l + neuroticism_l + agreeableness_l + gender + age + income
-    
+    trust_in_inst_l ~ openness_l + extraversion_l + conscientiousness_l + neuroticism_l + agreeableness_l + female + age + income
+
     ### PI concerns  as function of Trust in institutions, personality traits and demographics
-    pi_concerns_l ~ openness_l + extraversion_l + conscientiousness_l + neuroticism_l + agreeableness_l + trust_in_inst_l + gender + age + income
+    pi_concerns_l ~ openness_l + extraversion_l + conscientiousness_l + neuroticism_l + agreeableness_l + trust_in_inst_l + female + age + income
+
 </pre>
 		</div>
 		<br>
@@ -107,7 +108,7 @@ nav .nav-link.active {
 	    </h2>
 	    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion1">
 	      <div class="accordion-body">
-		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">neur_b, neur_c, income, pi_stranger, agrb_a, trst_gov, trst_prt, trst_pol, openness_l, open_c, pi_share, cons_a, agrb_c, extr_d, agrb_d, cons_d, conscientiousness_l, trust_in_inst_l, pi_track, extr_a, agrb_b, pi_safety, open_b, trst_leg, trst_plc, pi_misuse, extraversion_l, neur_d, agreeableness_l, pi_concerns_l, age, trst_prl, cons_b, extr_c, open_d, gender, open_a, extr_b, neur_a, cons_c, neuroticism_l</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">neur_b, neur_c, income, pi_stranger, agrb_a, trst_gov, trst_prt, trst_pol, openness_l, open_c, pi_share, cons_a, agrb_c, extr_d, agrb_d, cons_d, conscientiousness_l, trust_in_inst_l, pi_track, extr_a, agrb_b, pi_safety, open_b, trst_leg, trst_plc, pi_misuse, extraversion_l, neur_d, agreeableness_l, pi_concerns_l, trst_prl, cons_b, extr_c, open_d, open_a, extr_b, neur_a, cons_c, neuroticism_l</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">age, gender</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">agrb_a, agrb_b, agrb_c, agrb_d, cons_a, cons_b, cons_c, cons_d, extr_a, extr_b, extr_c, extr_d, neur_a, neur_b, neur_c, neur_d, open_a, open_b, open_c, open_d, pi_misuse, pi_safety, pi_share, pi_stranger, pi_track, trst_gov, trst_leg, trst_plc, trst_pol, trst_prl, trst_prt, age, gender, income</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">extraversion_l, agreeableness_l, trust_in_inst_l, pi_concerns_l, conscientiousness_l, openness_l, neuroticism_l</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">neur_b, neur_c, extr_a, agrb_b, pi_track, pi_safety, pi_stranger, extr_b, open_b, agrb_a, trst_leg, trst_plc, trst_gov, pi_misuse, trst_prt, trst_pol, neur_d, open_c, pi_share, cons_a, cons_b, agrb_c, extr_c, trst_prl, open_d, open_a, extr_d, agrb_d, cons_d, neur_a, cons_c</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">neur_b, neur_c, pi_stranger, agrb_a, trst_gov, trst_prt, trst_pol, open_c, pi_share, cons_a, agrb_c, extr_d, agrb_d, cons_d, pi_track, extr_a, agrb_b, pi_safety, open_b, trst_leg, trst_plc, pi_misuse, neur_d, trst_prl, cons_b, extr_c, open_d, open_a, extr_b, neur_a, cons_c</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">agreeableness_l, conscientiousness_l, extraversion_l, neuroticism_l, openness_l, pi_concerns_l, trust_in_inst_l, age, gender, income</div></div>
+		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">neur_a, trst_prt, cons_b, pi_stranger, agrb_c, extr_b, neur_d, pi_share, trst_gov, open_a, extr_a, pi_misuse, agrb_d, agrb_a, pi_track, cons_a, open_c, open_b, cons_d, open_d, cons_c, pi_concerns_l, neur_b, female, trust_in_inst_l, extraversion_l, trst_leg, trst_pol, extr_c, extr_d, trst_prl, openness_l, income, neur_c, neuroticism_l, agrb_b, trst_plc, agreeableness_l, conscientiousness_l, age, pi_safety</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">neur_a, trst_prt, cons_b, pi_stranger, agrb_c, extr_b, neur_d, pi_share, trst_gov, open_a, extr_a, pi_misuse, agrb_d, agrb_a, pi_track, cons_a, open_c, open_b, cons_d, open_d, cons_c, pi_concerns_l, neur_b, trust_in_inst_l, extraversion_l, trst_leg, trst_pol, extr_c, extr_d, trst_prl, openness_l, income, neur_c, neuroticism_l, agrb_b, trst_plc, agreeableness_l, conscientiousness_l, pi_safety</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">age, female</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">agrb_a, agrb_b, agrb_c, agrb_d, cons_a, cons_b, cons_c, cons_d, extr_a, extr_b, extr_c, extr_d, neur_a, neur_b, neur_c, neur_d, open_a, open_b, open_c, open_d, pi_misuse, pi_safety, pi_share, pi_stranger, pi_track, trst_gov, trst_leg, trst_plc, trst_pol, trst_prl, trst_prt, age, female, income</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">trust_in_inst_l, extraversion_l, openness_l, neuroticism_l, agreeableness_l, conscientiousness_l, pi_concerns_l</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">neur_a, cons_b, trst_prt, pi_stranger, agrb_c, trst_leg, extr_b, neur_d, trst_pol, extr_c, pi_share, trst_gov, extr_d, open_a, trst_prl, extr_a, pi_misuse, agrb_d, agrb_a, pi_track, neur_c, cons_a, open_c, open_b, agrb_b, trst_plc, cons_d, open_d, cons_c, pi_safety, neur_b</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">neur_a, trst_prt, cons_b, pi_stranger, agrb_c, extr_b, neur_d, pi_share, trst_gov, open_a, extr_a, pi_misuse, agrb_d, agrb_a, pi_track, cons_a, open_c, open_b, cons_d, open_d, cons_c, neur_b, trst_leg, trst_pol, extr_c, extr_d, trst_prl, neur_c, agrb_b, trst_plc, pi_safety</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">agreeableness_l, conscientiousness_l, extraversion_l, neuroticism_l, openness_l, pi_concerns_l, trust_in_inst_l, age, female, income</div></div>
 	      </div>
 	    </div>
 	  </div>
@@ -137,7 +138,7 @@ nav .nav-link.active {
 	<a class="anchor" id="estimates"></a>
 	<h3>Estimates</h3>
 	<div style="font-family:monospace">
-	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>openness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>-1.698</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>-2.043</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>-1.300</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>extraversion_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.309</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>-1.045</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>-1.011</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.282</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>-2.117</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>-1.772</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.038</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>-0.858</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>-0.900</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.886</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>-0.848</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>-0.802</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.905</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.846</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>0.927</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>0.723</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>0.926</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>0.800</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.949</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.986</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.982</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>income ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>-0.136</div><div class='col-sm-1'>0.005</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>-0.000</div><div class='col-sm-1'>0.877</div></div><div class="row"><div class='col-sm-2 text-end'>openness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.001</div><div class='col-sm-1'>0.609</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.019</div><div class='col-sm-1'>0.140</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>-0.000</div><div class='col-sm-1'>0.995</div></div><div class="row"><div class='col-sm-2 text-end'>extraversion_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.004</div><div class='col-sm-1'>0.005</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.150</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.074</div><div class='col-sm-1'>0.093</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.057</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.123</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>-0.020</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.187</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.227</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.012</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.006</div><div class='col-sm-1'>0.786</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.545</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.432</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.038</div><div class='col-sm-1'>0.403</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>-0.502</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>-0.140</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.176</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>-0.039</div><div class='col-sm-1'>0.585</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.002</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.356</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.058</div><div class='col-sm-1'>0.346</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.030</div><div class='col-sm-1'>0.453</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.006</div><div class='col-sm-1'>0.919</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>0.058</div><div class='col-sm-1'>0.086</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.181</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>-0.167</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>gender</div><div class='col-sm-1'>0.037</div><div class='col-sm-1'>0.550</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.011</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.006</div><div class='col-sm-1'>0.819</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>1.319</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>0.324</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.333</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>2.214</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.745</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.929</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_concerns_l</div><div class='col-sm-1'>1.672</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>1.016</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.221</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>1.293</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>0.724</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>1.042</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.568</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.418</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>1.078</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.564</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>1.685</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>1.425</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>1.622</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>1.623</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>1.544</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.397</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.922</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.638</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>1.659</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>1.346</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>1.908</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>0.556</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>1.760</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>0.543</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.646</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>1.957</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>2.138</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.972</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.470</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.463</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>0.966</div><div class='col-sm-1'>0.000</div></div>
+	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>openness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>-1.698</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>-2.043</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>-1.300</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>extraversion_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.309</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>-1.045</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>-1.011</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.282</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>-2.117</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>-1.772</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.038</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>-0.858</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>-0.900</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.886</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>-0.848</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>-0.802</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.905</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.846</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>0.927</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>0.723</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>0.926</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>0.800</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.949</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.986</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.982</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>income ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>-0.136</div><div class='col-sm-1'>0.005</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>-0.000</div><div class='col-sm-1'>0.877</div></div><div class="row"><div class='col-sm-2 text-end'>openness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.001</div><div class='col-sm-1'>0.609</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.019</div><div class='col-sm-1'>0.140</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>-0.000</div><div class='col-sm-1'>0.995</div></div><div class="row"><div class='col-sm-2 text-end'>extraversion_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.004</div><div class='col-sm-1'>0.005</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.150</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>0.074</div><div class='col-sm-1'>0.093</div></div><div class="row"><div class='col-sm-2 text-end'>conscientiousness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.057</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>0.123</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>neuroticism_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>-0.020</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.187</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>0.227</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>agreeableness_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.012</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.006</div><div class='col-sm-1'>0.786</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>0.545</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>trust_in_inst_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.432</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.038</div><div class='col-sm-1'>0.403</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>-0.502</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>-0.140</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.176</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>-0.039</div><div class='col-sm-1'>0.585</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.008</div><div class='col-sm-1'>0.002</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>0.356</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>pi_concerns_l ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>-0.058</div><div class='col-sm-1'>0.346</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.030</div><div class='col-sm-1'>0.453</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.006</div><div class='col-sm-1'>0.919</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>0.058</div><div class='col-sm-1'>0.086</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.181</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>-0.167</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>female</div><div class='col-sm-1'>0.037</div><div class='col-sm-1'>0.550</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>age</div><div class='col-sm-1'>0.011</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>-0.006</div><div class='col-sm-1'>0.819</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_concerns_l</div><div class='col-sm-1'>1.672</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trust_in_inst_l</div><div class='col-sm-1'>2.214</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extraversion_l</div><div class='col-sm-1'>0.745</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>openness_l</div><div class='col-sm-1'>0.324</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>income</div><div class='col-sm-1'>1.319</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neuroticism_l</div><div class='col-sm-1'>1.016</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agreeableness_l</div><div class='col-sm-1'>0.929</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>conscientiousness_l</div><div class='col-sm-1'>0.333</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_a</div><div class='col-sm-1'>1.463</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prt</div><div class='col-sm-1'>0.568</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_b</div><div class='col-sm-1'>1.646</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_stranger</div><div class='col-sm-1'>0.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_c</div><div class='col-sm-1'>1.685</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_b</div><div class='col-sm-1'>1.470</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_d</div><div class='col-sm-1'>1.760</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_share</div><div class='col-sm-1'>0.564</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_gov</div><div class='col-sm-1'>1.042</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_a</div><div class='col-sm-1'>1.972</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_a</div><div class='col-sm-1'>1.397</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_misuse</div><div class='col-sm-1'>0.556</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_d</div><div class='col-sm-1'>1.622</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_a</div><div class='col-sm-1'>0.724</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_track</div><div class='col-sm-1'>1.544</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_a</div><div class='col-sm-1'>1.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_c</div><div class='col-sm-1'>1.078</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_b</div><div class='col-sm-1'>1.659</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_d</div><div class='col-sm-1'>1.623</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>open_d</div><div class='col-sm-1'>2.138</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>cons_c</div><div class='col-sm-1'>0.966</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_b</div><div class='col-sm-1'>1.221</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_leg</div><div class='col-sm-1'>1.346</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_pol</div><div class='col-sm-1'>0.418</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_c</div><div class='col-sm-1'>1.957</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>extr_d</div><div class='col-sm-1'>1.425</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_prl</div><div class='col-sm-1'>0.543</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>neur_c</div><div class='col-sm-1'>1.293</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>agrb_b</div><div class='col-sm-1'>0.922</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>trst_plc</div><div class='col-sm-1'>1.908</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>pi_safety</div><div class='col-sm-1'>0.638</div><div class='col-sm-1'>0.000</div></div>
 	</div>
 	<br>
 	<div class="accordion" id="accordion3">
@@ -149,18 +150,18 @@ nav .nav-link.active {
 	    </h2>	
 	    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion3">
 	      <div class="accordion-body" style="background-color: #f6f8fa;max-width: 100%;width: 100%">
-		<pre style="font-family: monospace">           lval  op    rval  Estimate  Std. Err    z-value   p-value
-0        income   ~  gender -0.136061  0.048974  -2.778214  0.005466
-1        income   ~     age -0.000271  0.001755  -0.154469   0.87724
-2    openness_l   ~     age  0.000535  0.001047   0.510987   0.60936
-3    openness_l   ~  income  0.018777  0.012719   1.476253  0.139876
-4    openness_l   ~  gender -0.000165  0.029261  -0.005645  0.995496
-..          ...  ..     ...       ...       ...        ...       ...
-99       open_d  ~~  open_d  2.137878   0.07332  29.158064       0.0
-100      open_a  ~~  open_a  1.971791   0.06414  30.742188       0.0
-101      extr_b  ~~  extr_b  1.470170  0.071379  20.596576       0.0
-102      neur_a  ~~  neur_a  1.462715  0.059595  24.544448       0.0
-103      cons_c  ~~  cons_c  0.965955  0.070657  13.671143       0.0
+		<pre style="font-family: monospace">           lval  op       rval  Estimate  Std. Err    z-value   p-value
+0        income   ~     female -0.136061  0.048974  -2.778214  0.005466
+1        income   ~        age -0.000271  0.001755  -0.154469   0.87724
+2    openness_l   ~        age  0.000535  0.001047   0.510987   0.60936
+3    openness_l   ~     income  0.018777  0.012719   1.476253  0.139876
+4    openness_l   ~     female -0.000165  0.029261  -0.005645  0.995496
+..          ...  ..        ...       ...       ...        ...       ...
+99     trst_prl  ~~   trst_prl  0.543033  0.022611  24.016816       0.0
+100      neur_c  ~~     neur_c  1.292938  0.049625  26.054067       0.0
+101      agrb_b  ~~     agrb_b  0.921891  0.039359  23.422464       0.0
+102    trst_plc  ~~   trst_plc  1.908264   0.05969  31.969781       0.0
+103   pi_safety  ~~  pi_safety  0.637533  0.024405  26.123233       0.0
 
 [104 rows x 7 columns]</pre>
 	      </div>
@@ -183,7 +184,7 @@ Optimization successful.
 Optimization terminated successfully
 Objective value: 2.602
 Number of iterations: 66
-Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.858 -0.900 0.886 -0.848 -0.802 0.905 0.846 0.927 0.723 0.926 0.800 0.949 0.986 0.982 -0.136 -0.000 0.001 0.019 -0.000 0.004 0.150 0.074 0.008 0.057 0.123 -0.020 -0.187 0.227 0.012 -0.006 0.545 -0.432 0.038 -0.502 -0.140 0.176 -0.039 0.008 0.356 -0.058 0.030 0.006 0.058 0.181 -0.167 0.037 0.011 -0.006 1.221 1.293 1.319 0.696 0.724 1.042 0.568 0.418 0.324 1.078 0.564 1.696 1.685 1.425 1.622 1.623 0.333 2.214 1.544 1.397 0.922 0.638 1.659 1.346 1.908 0.556 0.745 1.760 0.929 1.672 0.543 1.646 1.957 2.138 1.972 1.470 1.463 0.966 1.016</pre>
+Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.858 -0.900 0.886 -0.848 -0.802 0.905 0.846 0.927 0.723 0.926 0.800 0.949 0.986 0.982 -0.136 -0.000 0.001 0.019 -0.000 0.004 0.150 0.074 0.008 0.057 0.123 -0.020 -0.187 0.227 0.012 -0.006 0.545 -0.432 0.038 -0.502 -0.140 0.176 -0.039 0.008 0.356 -0.058 0.030 0.006 0.058 0.181 -0.167 0.037 0.011 -0.006 1.463 0.568 1.646 0.696 1.685 1.470 1.760 0.564 1.042 1.972 1.397 0.556 1.622 0.724 1.544 1.696 1.078 1.659 1.623 2.138 0.966 1.672 1.221 2.214 0.745 1.346 0.418 1.957 1.425 0.543 0.324 1.319 1.293 1.016 0.922 1.908 0.929 0.333 0.638</pre>
 	      </div>
 	    </div>
 	  </div>
@@ -234,7 +235,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>trst_prl</th>
       <th>trst_prt</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -1424,7 +1425,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.02</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.13</td>
       <td>0.12</td>
       <td>-0.11</td>
@@ -1534,7 +1535,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>trst_prl</th>
       <th>trst_prt</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -2724,7 +2725,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.02</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.13</td>
       <td>0.11</td>
       <td>-0.11</td>
@@ -2824,7 +2825,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -2934,7 +2935,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -2972,7 +2973,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -3082,7 +3083,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3120,7 +3121,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -3230,7 +3231,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3274,7 +3275,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -3696,7 +3697,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3734,7 +3735,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -4156,7 +4157,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4194,7 +4195,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -4616,7 +4617,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4660,7 +4661,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -4770,7 +4771,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4808,7 +4809,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -4918,7 +4919,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4956,14 +4957,14 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>pi_concerns_l</th>
       <th>trust_in_inst_l</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>agreeableness_l</th>
-      <td>_c32</td>
+      <td>_c40</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4977,7 +4978,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
     <tr>
       <th>conscientiousness_l</th>
       <td>0.00</td>
-      <td>_c20</td>
+      <td>_c41</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -4991,7 +4992,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>extraversion_l</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c30</td>
+      <td>_c28</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5005,7 +5006,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c42</td>
+      <td>_c37</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5019,7 +5020,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c12</td>
+      <td>_c34</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5033,7 +5034,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c33</td>
+      <td>_c25</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5047,7 +5048,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c21</td>
+      <td>_c27</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5066,7 +5067,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -5089,7 +5090,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c6</td>
+      <td>_c35</td>
     </tr>
   </tbody>
 </table></div></div></div><div class="tab-pane fade " id="mxTheta" role="tabpanel" aria-labelledby="mxTheta-tab"><ul class="nav nav-tabs" id="Thetasub" role="tablist"><li class="nav-item" role="presentation">
@@ -5134,7 +5135,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>trst_prl</th>
       <th>trst_prt</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -6324,7 +6325,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -6434,7 +6435,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>trst_prl</th>
       <th>trst_prt</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
@@ -7624,7 +7625,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7734,14 +7735,14 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>trst_prl</th>
       <th>trst_prt</th>
       <th>age</th>
-      <th>gender</th>
+      <th>female</th>
       <th>income</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>agrb_a</th>
-      <td>_c8</td>
+      <td>_c17</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7779,7 +7780,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
     <tr>
       <th>agrb_b</th>
       <td>0.00</td>
-      <td>_c24</td>
+      <td>_c38</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7817,7 +7818,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <th>agrb_c</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c16</td>
+      <td>_c8</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7855,7 +7856,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c18</td>
+      <td>_c16</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7893,7 +7894,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c15</td>
+      <td>_c19</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7931,7 +7932,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c35</td>
+      <td>_c6</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -7969,7 +7970,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c41</td>
+      <td>_c24</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8007,7 +8008,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c19</td>
+      <td>_c22</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8045,7 +8046,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c23</td>
+      <td>_c14</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8083,7 +8084,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c39</td>
+      <td>_c9</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8121,7 +8122,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c36</td>
+      <td>_c31</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8159,7 +8160,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c17</td>
+      <td>_c32</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8197,7 +8198,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c40</td>
+      <td>_c4</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8235,7 +8236,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c4</td>
+      <td>_c26</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8273,7 +8274,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c5</td>
+      <td>_c36</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8311,7 +8312,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c31</td>
+      <td>_c10</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8349,7 +8350,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c38</td>
+      <td>_c13</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8387,7 +8388,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c26</td>
+      <td>_c21</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8425,7 +8426,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c13</td>
+      <td>_c20</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8463,7 +8464,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c37</td>
+      <td>_c23</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8501,7 +8502,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c29</td>
+      <td>_c15</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8539,7 +8540,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c25</td>
+      <td>_c42</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8577,7 +8578,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c14</td>
+      <td>_c11</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8653,7 +8654,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c22</td>
+      <td>_c18</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8691,7 +8692,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c9</td>
+      <td>_c12</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8729,7 +8730,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c27</td>
+      <td>_c29</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8767,7 +8768,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c28</td>
+      <td>_c39</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8805,7 +8806,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c11</td>
+      <td>_c30</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8843,7 +8844,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c34</td>
+      <td>_c33</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8881,7 +8882,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c10</td>
+      <td>_c5</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -8924,7 +8925,7 @@ Params: -1.698 -2.043 -1.300 1.309 -1.045 -1.011 1.282 -2.117 -1.772 1.038 -0.85
       <td>0.00</td>
     </tr>
     <tr>
-      <th>gender</th>
+      <th>female</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
