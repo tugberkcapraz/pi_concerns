@@ -1,6 +1,6 @@
-# Modelling Concerns About Personal Information with Structural Equation Modelling
-
+# What Factors Determine Digital Privacy Concerns?
 This repository contains the underlying code for my analysis that I shared on [medium](https://medium.com/@keremtuberkapraz/what-factors-determine-digital-privacy-concerns-6f6d7211b7a0).
+![img_1.png](img_1.png)
 
 ## Contents of this Repository
 1) [The jupyter notebook](https://github.com/tugberkcapraz/pi_concerns/blob/main/Post.ipynb) contains the code and
@@ -11,6 +11,11 @@ find the survey report and the questionnaire that I used in this project.
 4) [sem_report](https://github.com/tugberkcapraz/pi_concerns/tree/main/sem_report) is the report that is automatically
 created by semopy package. 
 
+## Data
+![img.png](img.png)
+Data is available [GESIS](https://search.gesis.org/research_data/ZA5553) archive. The access to the data is free
+of charge for members. You can get free membership and download the data
+
 ## Research Questions
 There are three questions that I wanted to answer in this study
 
@@ -19,6 +24,10 @@ There are three questions that I wanted to answer in this study
 2. Does **trust in political institutions** have any impact on digital privacy concerns? 
 
 3. Do **demographics** impact digital privacy concerns?
+
+
+![](causal_model.png)
+
 
 ## Methodology
 I used 3 different frameworks. 
@@ -30,18 +39,23 @@ I used 3 different frameworks.
 Causal inference was my final goal, however I wanted to build the first two models for comparison purposes. 
 
 The following packages are used in this analysis:
-> pre-processing:
-> > pandas
+> #### pre-processing:
+> > *pandas*
 > 
-> plotting
+> #### plotting
 > 
-> > matplotlib, plotnine
+> > *matplotlib, plotnine*
 > 
-> modelling:
-> > Semopy, Statsmodels, DoWhy, 
+> #### modelling:
+> > *Semopy, Statsmodels, DoWhy* 
 
 
-## Data
-Data is available [GESIS](https://search.gesis.org/research_data/ZA5553) archive. The access to the data is free
-of charge for members. You can get free membership and download the data
-
+## Results
+My Provisional causal model indicate that:
+>#### Question 1:
+>>**Neither of personality traits** have significant impact on the target.
+>#### Question 2:
+>>**trust in institutions**  have **negative** impact on digital privacy concerns.
+>#### Question 3:
+>> Among demographics, **Income** has negative impact, wheras **age** has the contrary. **Gender** has no impact on the 
+> matter

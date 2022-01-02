@@ -48,13 +48,6 @@ def scatter_and_smooth(data_frame,
 
 
 
-
-
-
-
-
-
-
 def plotbars(data_frame,
              x, y,
              x_label, y_label,
