@@ -10,23 +10,25 @@ find the survey report and the questionnaire that I used in this project.
 3) [plots](https://github.com/tugberkcapraz/pi_concerns/tree/main/plots) is the directory for the plots
 4) [sem_report](https://github.com/tugberkcapraz/pi_concerns/tree/main/sem_report) is the report that is automatically
 created by semopy package. 
+5) [functions](https://github.com/tugberkcapraz/pi_concerns/tree/main/functions) contains the helper functions that used 
+in the analysis.
+
+## Research Questions
+There are three questions that I wanted to answer in this study
+
+![](causal_model.png)
+
+1. Do **personality traits** impact digital privacy concerns?
+
+2. Does **trust in political institutions** have any impact on digital privacy concerns?
+
+3. Do **demographics** impact digital privacy concerns?
+
 
 ## Data
 ![img.png](img.png)
 Data is available [GESIS](https://search.gesis.org/research_data/ZA5553) archive. The access to the data is free
 of charge for members. You can get free membership and download the data
-
-## Research Questions
-There are three questions that I wanted to answer in this study
-
-1. Do **personality traits** impact digital privacy concerns? 
-
-2. Does **trust in political institutions** have any impact on digital privacy concerns? 
-
-3. Do **demographics** impact digital privacy concerns?
-
-
-![](causal_model.png)
 
 
 ## Methodology
